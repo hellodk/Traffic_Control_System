@@ -1,0 +1,12 @@
+
+***** Begin Label Report *****
+
+ Label in cell 'OR2 layout traffic':
+  info: Assign pin label "b" at (5.629, 11.860) to layer `M1'.
+  info: Assign pin label "OUT" at (12.738, 11.872) to layer `M1'.
+  info: Assign pin label "VDD1" at (11.982, 14.348) to layer `M1'.
+  info: Assign pin label "GND1" at (9.885, 8.641) to layer `M1'.
+  info: Assign pin label "a" at (8.885, 11.872) to layer `M1'.
+
+***** End of Label Report *****
+

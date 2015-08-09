@@ -1,0 +1,1785 @@
+
+            Assura (tm) Physical Verification Version av3.1:Production:dfII5.1.41
+            Release 3.1.6_USR1
+
+Copyright (c) Cadence Design Systems. All rights reserved.
+@(#)$CDS: assura version av3.1:Production:dfII5.1.41 09/13/2006 11:58 (tux21ee) $
+sub-version 3.1.6_USR1, integ signature 2006-08-17-1147j
+
+run on vlsi13 from /cad/cadence/ASSURA316/tools.lnx86/assura/bin/32bit/assura on Wed Jul  7 17:10:04 2010
+
+
+Starting /cad/cadence/ASSURA316/tools/assura/bin/aveng /home/summer_training/cadence/traffic/OR2.rsf -exec1 -LVS -cdslib /home/summer_training/cadence/cds.lib
+@(#)$CDS: aveng version av3.1:Production:dfII5.1.41 09/13/2006 11:58 (tux21ee) $
+sub-version 3.1.6_USR1, integ signature 2006-08-17-1147j
+
+run on vlsi13 from /cad/cadence/ASSURA316/tools.lnx86/assura/bin/32bit/aveng on Wed Jul  7 17:10:04 2010
+
+
+Loading tech rule set file : /home/summer_training/cadence/umc_design/RuleDecks/Assura/techRuleSets
+ Summary Report: OR2.sum
+ RSF           : /home/summer_training/cadence/traffic/OR2.rsf
+ Library Name  : traffic
+ CDSLIB Path   : "/home/summer_training/cadence/cds.lib"
+ Cell Name     : OR2
+ View Name     : layout
+ Rules File    : /home/summer_training/cadence/umc_design/RuleDecks/Assura/./lvs/G-DF-MIXED_MODE_RFCMOS18-1.8V_3.3V-1P6M-MMC_ASSURA-LVS-2.1-P2-EXTRACT.RUL
+ Options       : -exec1 -LVS -cdslib /home/summer_training/cadence/cds.lib 
+ Work Directory: /home/summer_training/cadence/traffic
+ Operating Mode: Legacy Mode is Off
+     Increased use of dataReduction is On
+     New hierarchical select is On
+
+
+Starting dfIIToVdb...
+@(#)$CDS: dfIIToVdb.exe version av3.1:Production:dfII5.1.41 09/13/2006 11:59 (tux21ee) $
+sub-version 3.1.6_USR1, integ signature 2006-08-17-1147j
+
+run on vlsi13 from /cad/cadence/ASSURA316/tools.lnx86/assura/bin/32bit/dfIIToVdb.exe on Wed Jul  7 17:10:05 2010
+
+
+Loading tech rule set file : /home/summer_training/cadence/umc_design/RuleDecks/Assura/techRuleSets
+*WARNING* The directory: '/home/student1/tsmc18rf/tsmc18rf' does not exist
+	but was defined in libFile '/home/summer_training/cadence/cds.lib' for Lib 'tsmc18rf'.
+*WARNING* The directory: '/home/student1/gpdk180_v3.2/libs.cdb/gpdk180' does not exist
+	but was defined in libFile '/home/summer_training/cadence/cds.lib' for Lib 'gpdk180'.
+	Loading UMC_18_CMOS/loadCxt.ile ... done!
+	Loading context 'designrule' from library 'UMC_18_CMOS' ... done!
+	Loading context 'toolFunction' from library 'UMC_18_CMOS' ... done!
+	Loading context 'Callback_MM' from library 'UMC_18_CMOS' ... done!
+	Loading context 'Callback_RF' from library 'UMC_18_CMOS' ... done!
+	Loading context 'pcell' from library 'UMC_18_CMOS' ... done!
+	Loading context 'Refresh_model' from library 'UMC_18_CMOS' ... done!
+	Loading context 'update_pdps' from library 'UMC_18_CMOS' ... done!
+ Loading  /cad/LIBRARIES/umc/designkit/Cadence/UMC_18_CMOS/libInitCustomExit.il
+*WARNING* The directory: '/home/student1/cadence/INCA_libs/worklib' does not exist
+	but was defined in libFile '/home/summer_training/cadence/cds.lib' for Lib 'worklib'.
+Compiling rules...
+
+
+************************************************************* 
+
+ Assura LVS of UMC 0.18um 1.8V/3.3V 1P6M MM/RF Process  
+  
+  
+ 
+
+************************************************************* 
+
+warn:   Undefined layer in dfII.
+	Layer name 'VSTRES' doesn't exist, treating as an empty layer.
+	VSTRES = layer("VSTRES" type("drawing"))
+
+warn:   Undefined layer in dfII.
+	Layer name 'IRAM' doesn't exist, treating as an empty layer.
+	IRAM = layer("IRAM" type("drawing"))
+
+warn:   LVS Run detected.
+Non-legacy mode has been disabled for this LVS run
+Checking out license for Assura_DRC 3.10
+
+Reading the design data...
+
+
+
+Finished dfIIToVdb.
+
+Building the VDB part 2 in background mode.
+
+Building tables for LVS Preprocessing in background mode.
+
+
+Starting /cad/cadence/ASSURA316/tools/assura/bin/vdbToCells /home/summer_training/cadence/traffic OR2
+
+Finished /cad/cadence/ASSURA316/tools/assura/bin/vdbToCells
+
+Starting Nvn PreExtraction...
+
+Starting /cad/cadence/ASSURA316/tools/assura/bin/nvn /home/summer_training/cadence/traffic/OR2.rsf -preExtract -exec1 -cdslib /home/summer_training/cadence/cds.lib
+@(#)$CDS: nvn version av3.1:Production:dfII5.1.41 09/13/2006 12:00 (tux21ee) $
+sub-version 3.1.6_USR1, integ signature 2006-08-17-1147j
+run on vlsi13 at Wed Jul  7 17:10:07 2010
+*WARNING* the rule 'filter' has been converted into 'filterOptions' with the same function.
+Reading schematic network
+ running dfIIToVldb -cdslib /home/summer_training/cadence/cds.lib /home/summer_training/cadence/traffic/OR2.vlr
+*WARNING* Access denied : in cds lib file /home/summer_training/cadence/cds.lib, line 9:
+	  /home/student1/cadence/INCA_libs/worklib
+*WARNING* Access denied : in cds lib file /home/summer_training/cadence/cds.lib, line 12:
+	  /home/student1/gpdk180_v3.2/libs.cdb/gpdk180
+*WARNING* Access denied : in cds lib file /home/summer_training/cadence/cds.lib, line 13:
+	  /home/student1/tsmc18rf/tsmc18rf
+@(#)$CDS: dfIIToVldb.exe version av3.1:Production:dfII5.1.41 09/13/2006 11:59 (tux21ee) $
+sub-version 3.1.6_USR1, integ signature 2006-08-17-1147j
+
+run on vlsi13 from /cad/cadence/ASSURA316/tools.lnx86/assura/bin/32bit/dfIIToVldb.exe on Wed Jul  7 17:10:07 2010
+
+Library Name: "traffic"
+Cell Name: "OR2"
+Cell View: "schematic"
+Output Data Base Name: "/home/summer_training/cadence/traffic/OR2.sdb"
+Simulator Name: "auLvs"
+View List: "auLvs schematic symbol"
+Stop List: "auLvs"
+*WARNING* The directory: '/home/student1/tsmc18rf/tsmc18rf' does not exist
+	but was defined in libFile '/home/summer_training/cadence/cds.lib' for Lib 'tsmc18rf'.
+*WARNING* The directory: '/home/student1/gpdk180_v3.2/libs.cdb/gpdk180' does not exist
+	but was defined in libFile '/home/summer_training/cadence/cds.lib' for Lib 'gpdk180'.
+*WARNING* The directory: '/home/student1/cadence/INCA_libs/worklib' does not exist
+	but was defined in libFile '/home/summer_training/cadence/cds.lib' for Lib 'worklib'.
+Net Listing Mode is Analog
+	Loading UMC_18_CMOS/loadCxt.ile ... done!
+	Loading context 'designrule' from library 'UMC_18_CMOS' ... done!
+	Loading context 'toolFunction' from library 'UMC_18_CMOS' ... done!
+	Loading context 'Callback_MM' from library 'UMC_18_CMOS' ... done!
+	Loading context 'Callback_RF' from library 'UMC_18_CMOS' ... done!
+	Loading context 'pcell' from library 'UMC_18_CMOS' ... done!
+	Loading context 'Refresh_model' from library 'UMC_18_CMOS' ... done!
+	Loading context 'update_pdps' from library 'UMC_18_CMOS' ... done!
+ Loading  /cad/LIBRARIES/umc/designkit/Cadence/UMC_18_CMOS/libInitCustomExit.il
+*WARNING* Ignoring deviceTerminals property on cell N_18_MM (value is empty string)
+*WARNING* Ignoring deviceTerminals property on cell P_18_MM (value is empty string)
+writing /home/summer_training/cadence/traffic/OR2.sdb
+ inputting /home/summer_training/cadence/traffic/OR2.sdb
+Reading layout network
+ inputting network /home/summer_training/cadence/traffic/OR2.ldb
+Preprocessing schematic network phase 1
+Preprocessing layout network phase 1
+Preprocessing schematic network phase 2
+Preprocessing layout network phase 2
+cpu=0.00m  wall=0.00m  mem=9.59mb
+
+Finished /cad/cadence/ASSURA316/tools/assura/bin/nvn
+
+Building the VDB part 3 in background mode.
+
+Beginning group shapes processing
+
+
+Finished building the VDB. VDB build times for main process:
+cpu: 0.09  elap: 4  pf: 0  in: 0  out: 0  virt: 12M  phys: 0M
+
+Running the Task Processor, 1 cells, 2497 steps...
+
+Top Cell is 'OR2 layout traffic'
+
+Executing: BULK = geomSize(geomBkgnd() 1.0)
+
+Executing: sepgnd_1 = geomSize(SEPGND 0.01)
+
+Executing: sepgnd_2 = geomAndNot(sepgnd_1 SEPGND)
+
+Executing: psub_all = geomAndNot(BULK NWEL)
+
+Executing: psub = geomAndNot(psub_all sepgnd_2)
+
+Executing: nwell = geomAndNot(NWEL TWEL)
+
+Executing: bpdiff = geomAnd(DIFF PPLUS)
+
+Executing: bndiff = geomAnd(DIFF NPLUS)
+
+Executing: welres = geomAvoiding(geomAnd(nwell geomCat(NWR VSTRES)) PPLUS)
+
+Executing: wel = geomAndNot(nwell welres)
+
+Executing: pdres = geomInside(geomAnd(bpdiff RSYMBOL) wel)
+
+Executing: nspdres = geomAnd(pdres SAB)
+
+Executing: spdres = geomAvoiding(pdres SAB)
+
+Executing: psd = geomAndNot(geomAndNot(bpdiff pdres) PO1)
+
+Executing: rfpsd = geomOverlap(psd RFSYMBOL)
+
+Executing: rfpd = geomAvoiding(rfpsd RFMOS_S)
+
+Executing: rfps = geomOverlap(rfpsd RFMOS_S)
+
+Executing: ndres = geomAvoiding(geomAnd(bndiff geomCat(RSYMBOL VSTRES)) wel)
+
+Executing: nsndres = geomAnd(ndres SAB)
+
+Executing: sndres = geomAvoiding(ndres SAB)
+
+Executing: nsd = geomAndNot(geomAndNot(bndiff ndres) PO1)
+
+Executing: rfnsd = geomOverlap(nsd RFSYMBOL)
+
+Executing: rfnd = geomAvoiding(rfnsd RFMOS_S)
+
+Executing: rfns = geomOverlap(rfnsd RFMOS_S)
+
+Executing: ntap = geomAnd(nsd nwell)
+
+Executing: ptap = geomAndNot(geomAndNot(psd SEALRMARK) nwell)
+
+Executing: pyres = geomAnd(PO1 PSYMBOL)
+
+Executing: SPYRES = geomAnd(pyres SAB)
+
+Executing: hrpyres1 = geomOverlap(geomAnd(SPYRES HR) PPLUS)
+
+Executing: hrpyres_rf = geomAnd(geomAnd(hrpyres1 NWEL) RFSYMBOL)
+
+Executing: hrpyres_mm = geomAnd(geomAnd(hrpyres1 NWEL) MMSYMBOL)
+
+Executing: apyres = geomAndNot(pyres hrpyres1)
+
+Executing: ppyres = geomAnd(apyres PPLUS)
+
+Executing: nsppyr1 = geomAnd(geomAnd(ppyres SAB) wel)
+
+Executing: nsppyr = geomAvoiding(geomAvoiding(nsppyr1 MMSYMBOL) RFSYMBOL)
+
+Executing: nsppyr_mm = geomAnd(nsppyr1 MMSYMBOL)
+
+Executing: nsppyr_rf = geomAnd(nsppyr1 RFSYMBOL)
+
+Executing: sppyr = geomAvoiding(ppyres SAB)
+
+Executing: npyres = geomAnd(apyres NPLUS)
+
+Executing: nsnpyr1 = geomAndNot(geomAnd(npyres SAB) nwell)
+
+Executing: nsnpyr = geomAvoiding(geomAvoiding(nsnpyr1 MMSYMBOL) RFSYMBOL)
+
+Executing: nsnpyr_mm = geomAnd(nsnpyr1 MMSYMBOL)
+
+Executing: nsnpyr_rf = geomAnd(nsnpyr1 RFSYMBOL)
+
+Executing: snpyr = geomAvoiding(npyres SAB)
+
+Executing: ply1 = geomAnd(geomAvoiding(geomAvoiding(PO1 pyres) DIFF) SAB)
+
+Executing: ply = geomAndNot(geomAndNot(geomAndNot(PO1 pyres) ply1) PO_LVS)
+
+Executing: m1res = geomAnd(ME1 M1RESMK)
+
+Executing: M1 = M1 = M1 = geomAndNot(ME1 m1res)
+
+Executing: m2res = geomAnd(ME2 M2RESMK)
+
+Executing: M2 = M2 = M2 = geomAndNot(ME2 m2res)
+
+Executing: m3res = geomAnd(ME3 M3RESMK)
+
+Executing: M3 = M3 = M3 = geomAndNot(ME3 m3res)
+
+Executing: m4res = geomAnd(ME4 M4RESMK)
+
+Executing: M4 = M4 = M4 = geomAndNot(ME4 m4res)
+
+Executing: m5res = geomAnd(ME5 M5RESMK)
+
+Executing: M5 = M5 = geomAndNot(ME5 m5res)
+
+Executing: m6res = geomAnd(ME6 M6RESMK)
+
+Executing: M6 = M6 = geomAndNot(ME6 m6res)
+
+Executing: RAMCELL = geomOr(geomOr(BLSP_ID1 DP_ID) BLSP_1A)
+
+Executing: ngate1 = geomSize(geomAnd(bndiff ply) -0.05 downUp)
+
+Executing: pgate1 = geomSize(geomAnd(bpdiff ply) -0.05 downUp)
+
+Executing: pgate = geomAnd(pgate1 wel)
+
+Executing: ngate = geomAnd(ngate1 psub)
+
+Executing: ngate_lv = geomAndNot(geomAndNot(ngate TG) RAMCELL)
+
+Executing: ngate_hv = geomAndNot(geomAnd(ngate TG) RAMCELL)
+
+Executing: pgate_lv = geomAndNot(geomAndNot(pgate TG) RAMCELL)
+
+Executing: pgate_hv = geomAndNot(geomAnd(pgate TG) RAMCELL)
+
+Executing: RAM_PBIT = geomAndNot(geomButtOnly(geomAnd(pgate RAMCELL) psd (keep == 2)) psub)
+
+Executing: RAM_NBIT = geomAndNot(geomButtOnly(geomAnd(ngate RAMCELL) nsd (keep == 2)) NWEL)
+
+Executing: RAM_SP = geomOr(BLSP_ID1 BLSP_1A)
+
+Executing: RBPGAT_B6T400 = geomAnd(RAM_PBIT RAM_SP)
+
+Executing: RBNGAT_B6T400 = geomAnd(RAM_NBIT RAM_SP)
+
+Executing: RBNPD_B6T400 = drc(RBNGAT_B6T400 (area > 0.0555))
+
+Executing: RBNPG_B6T400 = geomAndNot(RBNGAT_B6T400 RBNPD_B6T400)
+
+Executing: RBPGAT_B8T1020 = geomAnd(RAM_PBIT DP_ID)
+
+Executing: RBNGAT_B8T1020 = geomAnd(RAM_NBIT DP_ID)
+
+Executing: RBNPD_B8T1020 = drc(RBNGAT_B8T1020 (area > 0.1))
+
+Executing: RBNPG_B8T1020 = geomAndNot(RBNGAT_B8T1020 RBNPD_B8T1020)
+
+Executing: spgate = geomAndNot(geomAndNot(geomAndNot(pgate RAMCELL) VTPL) VTPHL)
+
+Executing: spgate1_lv = geomAndNot(spgate TG)
+
+Executing: spgate_lv = geomAvoiding(spgate1_lv IRAM)
+
+Executing: spgate_hv = geomAnd(spgate TG)
+
+Executing: sngate1 = geomAndNot(geomAndNot(geomAndNot(geomAndNot(ngate1 RAMCELL) VTNL) V...
+
+Executing: sngate = geomAnd(sngate1 psub)
+
+Executing: sngate1_lv = geomAndNot(sngate TG)
+
+Executing: sngate_lv = geomAvoiding(sngate1_lv IRAM)
+
+Executing: sngate_hv = geomAnd(sngate TG)
+
+Executing: mmrf = geomCat(MMSYMBOL RFSYMBOL)
+
+Executing: ngate_sp = geomAvoiding(sngate_lv mmrf)
+
+Executing: pgate_sp = geomAvoiding(spgate_lv mmrf)
+
+Executing: hngate_sp = geomAvoiding(sngate_hv mmrf)
+
+Executing: hpgate_sp = geomAvoiding(spgate_hv mmrf)
+
+Executing: pg_sram = geomSize(geomAnd(spgate1_lv IRAM) -0.02 downUp)
+
+Executing: ng_sram = geomSize(geomAnd(sngate1_lv IRAM) -0.02 downUp)
+
+Executing: ngate_mm1 = geomAvoiding(geomOverlap(sngate_lv MMSYMBOL) RFSYMBOL)
+
+Executing: pgate_mm1 = geomAvoiding(geomOverlap(spgate_lv MMSYMBOL) RFSYMBOL)
+
+Executing: hngate_mm = geomAvoiding(geomOverlap(sngate_hv MMSYMBOL) RFSYMBOL)
+
+Executing: hpgate_mm = geomAvoiding(geomOverlap(spgate_hv MMSYMBOL) RFSYMBOL)
+
+Executing: ngate_mm = geomAvoiding(ngate_mm1 CSYMBOL)
+
+Executing: nmos_cap = geomAnd(ngate_mm1 CSYMBOL)
+
+Executing: pgate_mm = geomAvoiding(pgate_mm1 CSYMBOL)
+
+Executing: pmos_cap = geomAnd(pgate_mm1 CSYMBOL)
+
+Executing: ngate_lvt = geomAndNot(geomAnd(ngate_lv VTNL) VTNI)
+
+Executing: pgate_lvt = geomAnd(pgate_lv VTPL)
+
+Executing: hngate_lvt = geomAndNot(geomAnd(ngate_hv VTNHL) VTNL)
+
+Executing: hpgate_lvt = geomAnd(pgate_hv VTPHL)
+
+Executing: ngate_zt = geomAndNot(geomAnd(ngate_lv VTNI) VTNL)
+
+Executing: hngate_zt = geomAndNot(geomAnd(ngate_hv VTNL) VTNHL)
+
+Executing: ngate_bpw = geomAndNot(geomAnd(sngate1 TWEL) TG)
+
+Executing: hngate_bpw = geomAnd(geomAnd(sngate1 TWEL) TG)
+
+Executing: ngate_rf = geomOverlap(geomOverlap(sngate_lv RFSYMBOL) SIZE2)
+
+Executing: ngate_srf = geomOverlap(geomOverlap(sngate_lv RFSYMBOL) SIZE1)
+
+Executing: pgate_rf = geomOverlap(geomOverlap(spgate_lv RFSYMBOL) SIZE2)
+
+Executing: pgate_srf = geomOverlap(geomOverlap(spgate_lv RFSYMBOL) SIZE1)
+
+Executing: hngate_rf = geomOverlap(geomOverlap(sngate_hv RFSYMBOL) SIZE2)
+
+Executing: hngate_srf = geomOverlap(geomOverlap(sngate_hv RFSYMBOL) SIZE1)
+
+Executing: hpgate_rf = geomOverlap(geomOverlap(spgate_hv RFSYMBOL) SIZE2)
+
+Executing: hpgate_srf = geomOverlap(geomOverlap(spgate_hv RFSYMBOL) SIZE1)
+
+Executing: rfdiff = geomOverlap(DIFF RFSYMBOL)
+
+Executing: ng_rf = geomOverlap(rfdiff ngate_rf)
+
+Executing: ng_srf = geomOverlap(rfdiff ngate_srf)
+
+Executing: pg_rf = geomOverlap(rfdiff pgate_rf)
+
+Executing: pg_srf = geomOverlap(rfdiff pgate_srf)
+
+Executing: hng_rf = geomOverlap(rfdiff hngate_rf)
+
+Executing: hng_srf = geomOverlap(rfdiff hngate_srf)
+
+Executing: hpg_rf = geomOverlap(rfdiff hpgate_rf)
+
+Executing: hpg_srf = geomOverlap(rfdiff hpgate_srf)
+
+Executing: bjtpod = geomAnd(psd BJTSYMBOL)
+
+Executing: qte = geomInside(bjtpod wel)
+
+Executing: qtc = geomOutside(bjtpod NWEL)
+
+Executing: bjt_all = geomHoles(qtc)
+
+Executing: qte5 = geomContactCheck(qte (length <= 5.5) (width <= 5.5))
+
+Executing: qte10 = geomAndNot(qte qte5)
+
+Executing: bjt5 = geomEnclose(bjt_all qte5)
+
+Executing: bjt10 = geomEnclose(bjt_all qte10)
+
+Executing: bjt_v5 = geomAvoiding(bjt5 MMSYMBOL)
+
+Executing: bjt_v10 = geomAvoiding(bjt10 MMSYMBOL)
+
+Executing: bjt_v5_mm = geomOverlap(bjt5 MMSYMBOL)
+
+Executing: bjt_v10_mm = geomOverlap(bjt10 MMSYMBOL)
+
+Executing: dioden_1 = geomAnd(nsd psub)
+
+Executing: dioden_2 = geomAvoiding(dioden_1 PO1)
+
+Executing: dioden_3 = geomAvoiding(dioden_2 ptap)
+
+Executing: dioden_4 = geomAvoiding(dioden_3 RSYMBOL)
+
+Executing: dioden_5 = geomAvoiding(dioden_4 BJTSYMBOL)
+
+Executing: dioden_6 = geomAndNot(dioden_5 XDIODE)
+
+Executing: dioden = geomAvoiding(dioden_6 MMSYMBOL)
+
+Executing: dioden_mm = geomOverlap(dioden_6 MMSYMBOL)
+
+Executing: diodep_1 = geomAnd(psd wel)
+
+Executing: diodep_2 = geomAvoiding(diodep_1 PO1)
+
+Executing: diodep_3 = geomAvoiding(diodep_2 ntap)
+
+Executing: diodep_4 = geomAvoiding(diodep_3 RSYMBOL)
+
+Executing: diodep_5 = geomAvoiding(diodep_4 BJTSYMBOL)
+
+Executing: diodep_6 = geomAndNot(diodep_5 XDIODE)
+
+Executing: diodep_7 = geomAvoiding(diodep_6 CSYMBOL)
+
+Executing: diodep = geomAvoiding(diodep_7 MMSYMBOL)
+
+Executing: diodep_mm = geomOverlap(diodep_7 MMSYMBOL)
+
+Executing: pnvar = geomOverlap(diodep_6 CSYMBOL)
+
+Executing: vard_rf = geomButtOrOver(wel pnvar)
+
+Executing: NWNACT = geomAndNot(geomAndNot(geomInside(geomButtOrOver(wel nsd) DSYMBOL) MM...
+
+Executing: NWNACT_MM = geomAnd(geomInside(geomButtOrOver(wel nsd) DSYMBOL) MMSYMBOL)
+
+Executing: top_m_l = geomAnd(geomAnd(top_m LSYMBOL) RFSYMBOL)
+
+Executing: slm_ll = geomAnd(sec_last_met LSYMBOL)
+
+Executing: ind_me = geomAnd(geomOr(top_m_l slm_ll) IND)
+
+Executing: top_m_c = top_m_c = geomAndNot(top_m ind_me)
+
+Executing: slm_c = slm_c = geomAndNot(sec_last_met ind_me)
+
+Executing: top_m_lb = geomSize(top_m_l 0.1)
+
+Executing: top_m_ls = geomSize(top_m_l -0.1)
+
+Executing: slm_lt = geomOverlap(geomAnd(sec_last_met top_m_l) top_via)
+
+Executing: slm_l = geomOverlap(sec_last_met top_m_l)
+
+Executing: ldimeter = geomGetBBox(ind_me (width >= 1))
+
+Executing: slm_l1a = geomAndNot(geomAndNot(slm_l slm_lt) top_m_l)
+
+Executing: slm_l1 = geomAvoiding(slm_l1a top_via)
+
+Executing: slm_l2 = geomAvoiding(geomAnd(slm_l top_m_l) slm_lt)
+
+Executing: ind_pin = geomAnd(top_m_c top_m_lb)
+
+Executing: ind_minus1 = geomGetVertex(top_m_l (keep < 16))
+
+Executing: ind_minus = geomButtOrOver(ind_pin ind_minus1)
+
+Executing: ind_plus = geomAndNot(ind_pin ind_minus)
+
+Executing: rf_pad = geomOverlap(geomAnd(geomAnd(top_m_c PAD) M1) RFSYMBOL)
+
+Executing: type1 = geomAnd(rf_pad PAD)
+
+Executing: type2 = geomOverlap(type1 geomOverlap(M5 geomOverlap(VI5 type1)))
+
+Executing: type3 = geomOverlap(type2 geomOverlap(M4 geomOverlap(VI4 type2)))
+
+Executing: type4 = geomOverlap(type3 geomOverlap(M3 geomOverlap(VI3 type3)))
+
+Executing: type5 = geomOverlap(type4 geomOverlap(M2 geomOverlap(VI2 type4)))
+
+Executing: vargate = geomOverlap(geomAnd(sngate1 wel) RFSYMBOL)
+
+Executing: varmis_rf = geomOverlap(RFSYMBOL vargate)
+
+Executing: slm_term = geomInside(geomOverlap(slm_c ply) RFSYMBOL)
+
+Executing: cmmc = geomAnd(MMC slm_c)
+
+Executing: cmmc_msq = geomInside(geomOverlap(cmmc RFSYMBOL) geomCat(M1 MCAP))
+
+Executing: cmmc_mm = geomOverlap(cmmc MMSYMBOL)
+
+Executing: cmmc_msq_rf = geomOverlap(slm_c cmmc_msq)
+
+Executing: polycon = geomAnd(ply CONT)
+
+Executing: nsdcon = geomAnd(nsd CONT)
+
+Executing: psdcon = geomAnd(psd CONT)
+
+Executing: NDX = geomSize(nsd 0.005)
+
+Executing: PTX = geomSize(ptap 0.005)
+
+Executing: STPX = geomAnd(PTX NDX)
+
+Executing: STP = geomAnd(STPX DP_ID)
+
+Executing: rcxLayer(RFSYMBOL)
+
+Executing: geomConnect((svia VI5 top_m_c MMC slm_c) (via VI4 slm_c M4) (via VI3 M4 M3) (...
+ See the label report in "OR2.erc" file for details.
+
+
+Executing: nnbdif = geomButtOnly(nsd ptap diffNet)
+	   errorLayer(nnbdif " nsd/ptap butting issue: nsd/ptap need to be connected by metal and contact")
+
+Executing: ppbdif = geomButtOnly(psd ntap diffNet)
+	   errorLayer(ppbdif " psd/ntap butting issue: psd/ntap need to be connected by metal and contact")
+
+Executing: ptap99 = geomGetNet(ptap "VDD" "VCC")
+	   errorLayer(ptap99 "PTAP is wrongly connected to POWER ! ")
+*WARNING* Cannot access net 'VDD' in top cell.
+*WARNING* Cannot access net 'VCC' in top cell.
+
+Executing: ntap99 = geomGetNet(ntap "GND" "VSS")
+	   errorLayer(ntap99 "NTAP is wrongly connected to GROUND ! ")
+*WARNING* Cannot access net 'GND' in top cell.
+*WARNING* Cannot access net 'VSS' in top cell.
+
+Executing: geomStamp(psub ptap error)
+
+Executing: geomStamp(wel ntap error)
+
+Executing: geomStamp(TWEL ptap error)
+
+Executing: geomStamp(rfpd psd)
+
+Executing: geomStamp(rfps psd)
+
+Executing: geomStamp(rfnd nsd)
+
+Executing: geomStamp(rfns nsd)
+
+Executing: geomStamp(qte psd)
+
+Executing: geomStamp(ind_plus top_m_c)
+
+Executing: geomStamp(ind_minus top_m_c)
+
+Executing: geomStamp(slm_term top_m_c)
+
+Executing: saveInterconnect((ply "PO1"))
+
+Executing: saveInterconnect((M1 "ME1"))
+
+Executing: saveInterconnect((M2 "ME2"))
+
+Executing: saveInterconnect((M3 "ME3"))
+
+Executing: saveInterconnect((M4 "ME4"))
+
+Executing: saveInterconnect((slm_c "ME5"))
+
+Executing: saveInterconnect((top_m_c "ME6"))
+
+Executing: extractMOS("N_18_G2" ngate_sp (ply "G") (nsd "S" "D") (psub "B") flagMalformed)
+
+Executing: w_mos1 = measureParameter(length (ngate_sp coincident ply) 5e-07)
+
+Executing: a_mos1 = measureParameter(area (ngate_sp) 1e-12)
+
+Executing: l_mos1 = calculateParameter((a_mos1 / w_mos1))
+
+Executing: nameParameter(l_mos1 "l")
+
+Executing: nameParameter(w_mos1 "w")
+
+Executing: extractMOS("P_18_G2" pgate_sp (ply "G") (psd "S" "D") (wel "B") flagMalformed)
+
+Executing: w_mos2 = measureParameter(length (pgate_sp coincident ply) 5e-07)
+
+Executing: a_mos2 = measureParameter(area (pgate_sp) 1e-12)
+
+Executing: l_mos2 = calculateParameter((a_mos2 / w_mos2))
+
+Executing: nameParameter(l_mos2 "l")
+
+Executing: nameParameter(w_mos2 "w")
+
+Executing: extractMOS("N_33_G2" hngate_sp (ply "G") (nsd "S" "D") (psub "B") flagMalformed)
+
+Executing: w_mos3 = measureParameter(length (hngate_sp coincident ply) 5e-07)
+
+Executing: a_mos3 = measureParameter(area (hngate_sp) 1e-12)
+
+Executing: l_mos3 = calculateParameter((a_mos3 / w_mos3))
+
+Executing: nameParameter(l_mos3 "l")
+
+Executing: nameParameter(w_mos3 "w")
+
+Executing: extractMOS("P_33_G2" hpgate_sp (ply "G") (psd "S" "D") (wel "B") flagMalformed)
+
+Executing: w_mos4 = measureParameter(length (hpgate_sp coincident ply) 5e-07)
+
+Executing: a_mos4 = measureParameter(area (hpgate_sp) 1e-12)
+
+Executing: l_mos4 = calculateParameter((a_mos4 / w_mos4))
+
+Executing: nameParameter(l_mos4 "l")
+
+Executing: nameParameter(w_mos4 "w")
+
+Executing: extractMOS("NB" ng_sram (ply "G") (nsd "S" "D") (psub "B") flagMalformed)
+
+Executing: w_mos5 = measureParameter(length (ng_sram coincident ply) 5e-07)
+
+Executing: l_mos5 = measureParameter(length (ng_sram inside ply) 5e-07)
+
+Executing: nameParameter(l_mos5 "l")
+
+Executing: nameParameter(w_mos5 "w")
+
+Executing: extractMOS("N_PG400_G2" RBNPG_B6T400 (ply "G") (nsd "S" "D") (psub "B") flagM...
+
+Executing: w_RBNPG_B6T400 = measureParameter(length (RBNPG_B6T400 coincident ply) 5e-07)
+
+Executing: a_RBNPG_B6T400 = measureParameter(area (RBNPG_B6T400) 1e-12)
+
+Executing: l_RBNPG_B6T400 = calculateParameter((a_RBNPG_B6T400 / w_RBNPG_B6T400))
+
+Executing: nameParameter(l_RBNPG_B6T400 "l")
+
+Executing: nameParameter(w_RBNPG_B6T400 "w")
+
+Executing: extractMOS("N_PD400_G2" RBNPD_B6T400 (ply "G") (nsd "S" "D") (psub "B") flagM...
+
+Executing: w_RBNPD_B6T400 = measureParameter(length (RBNPD_B6T400 coincident ply) 5e-07)
+
+Executing: a_RBNPD_B6T400 = measureParameter(area (RBNPD_B6T400) 1e-12)
+
+Executing: l_RBNPD_B6T400 = calculateParameter((a_RBNPD_B6T400 / w_RBNPD_B6T400))
+
+Executing: nameParameter(l_RBNPD_B6T400 "l")
+
+Executing: nameParameter(w_RBNPD_B6T400 "w")
+
+Executing: extractMOS("P_L400_G2" RBPGAT_B6T400 (ply "G") (psd "S" "D") (wel "B") flagMa...
+
+Executing: w_RBPGAT_B6T400 = measureParameter(length (RBPGAT_B6T400 coincident ply) 5e-07)
+
+Executing: a_RBPGAT_B6T400 = measureParameter(area (RBPGAT_B6T400) 1e-12)
+
+Executing: l_RBPGAT_B6T400 = calculateParameter((a_RBPGAT_B6T400 / w_RBPGAT_B6T400))
+
+Executing: nameParameter(l_RBPGAT_B6T400 "l")
+
+Executing: nameParameter(w_RBPGAT_B6T400 "w")
+
+Executing: extractMOS("N_PG1020_G2" RBNPG_B8T1020 (ply "G") (nsd "S" "D") (psub "B") fla...
+
+Executing: w_RBNPG_B8T1020 = measureParameter(length (RBNPG_B8T1020 coincident ply) 5e-07)
+
+Executing: a_RBNPG_B8T1020 = measureParameter(area (RBNPG_B8T1020) 1e-12)
+
+Executing: l_RBNPG_B8T1020 = calculateParameter((a_RBNPG_B8T1020 / w_RBNPG_B8T1020))
+
+Executing: nameParameter(l_RBNPG_B8T1020 "l")
+
+Executing: nameParameter(w_RBNPG_B8T1020 "w")
+
+Executing: extractMOS("N_PD1020_G2" RBNPD_B8T1020 (ply "G") (nsd "S" "D") (psub "B") fla...
+
+Executing: w_RBNPD_B8T1020 = measureParameter(length (RBNPD_B8T1020 coincident ply) 5e-07)
+
+Executing: a_RBNPD_B8T1020 = measureParameter(area (RBNPD_B8T1020) 1e-12)
+
+Executing: l_RBNPD_B8T1020 = calculateParameter((a_RBNPD_B8T1020 / w_RBNPD_B8T1020))
+
+Executing: nameParameter(l_RBNPD_B8T1020 "l")
+
+Executing: nameParameter(w_RBNPD_B8T1020 "w")
+
+Executing: extractMOS("P_L1020_G2" RBPGAT_B8T1020 (ply "G") (psd "S" "D") (wel "B") flag...
+
+Executing: w_RBPGAT_B8T1020 = measureParameter(length (RBPGAT_B8T1020 coincident ply) 5e...
+
+Executing: a_RBPGAT_B8T1020 = measureParameter(area (RBPGAT_B8T1020) 1e-12)
+
+Executing: l_RBPGAT_B8T1020 = calculateParameter((a_RBPGAT_B8T1020 / w_RBPGAT_B8T1020))
+
+Executing: nameParameter(l_RBPGAT_B8T1020 "l")
+
+Executing: nameParameter(w_RBPGAT_B8T1020 "w")
+
+Executing: extractMOS("PB" pg_sram (ply "G") (psd "S" "D") (wel "B") flagMalformed)
+
+Executing: w_mos6 = measureParameter(length (pg_sram coincident ply) 5e-07)
+
+Executing: l_mos6 = measureParameter(length (pg_sram inside ply) 5e-07)
+
+Executing: nameParameter(l_mos6 "l")
+
+Executing: nameParameter(w_mos6 "w")
+
+Executing: extractRES("RSNWELL" welres (wel "PLUS" "MINUS") flagMalformed)
+
+Executing: l_r1 = measureParameter(length (welres coincident nwell) 5e-07)
+
+Executing: w_r1 = measureParameter(length (welres inside nwell) 5e-07)
+
+Executing: res = calculateParameter(((l_r1 / w_r1) * ((408 * w_r1) / (w_r1 - 3.2e-07))))
+
+Executing: nameParameter(l_r1 "l")
+
+Executing: nameParameter(w_r1 "w")
+
+Executing: nameParameter(res "r")
+
+Executing: extractRES("RSND" sndres (nsd "PLUS" "MINUS") flagMalformed)
+
+Executing: width = measureParameter(length (sndres inside bndiff) 5e-07)
+
+Executing: length = measureParameter(length (sndres coincident bndiff) 5e-07)
+
+Executing: res = calculateParameter(((RhoD * length) / width))
+
+Executing: nameParameterlength("l")
+
+Executing: nameParameter(width "w")
+
+Executing: nameParameter(res "r")
+
+Executing: extractRES("RSPD" spdres (psd "PLUS" "MINUS") flagMalformed)
+
+Executing: width = measureParameter(length (spdres inside bpdiff) 5e-07)
+
+Executing: length = measureParameter(length (spdres coincident bpdiff) 5e-07)
+
+Executing: res = calculateParameter(((RhoD * length) / width))
+
+Executing: nameParameterlength("l")
+
+Executing: nameParameter(width "w")
+
+Executing: nameParameter(res "r")
+
+Executing: extractRES("RSNPO" snpyr (ply "PLUS" "MINUS") flagMalformed)
+
+Executing: width = measureParameter(length (snpyr inside PO1) 5e-07)
+
+Executing: length = measureParameter(length (snpyr coincident PO1) 5e-07)
+
+Executing: res = calculateParameter(((RhoD * length) / width))
+
+Executing: nameParameterlength("l")
+
+Executing: nameParameter(width "w")
+
+Executing: nameParameter(res "r")
+
+Executing: extractRES("RSPPO" sppyr (ply "PLUS" "MINUS") flagMalformed)
+
+Executing: width = measureParameter(length (sppyr inside PO1) 5e-07)
+
+Executing: length = measureParameter(length (sppyr coincident PO1) 5e-07)
+
+Executing: res = calculateParameter(((RhoD * length) / width))
+
+Executing: nameParameterlength("l")
+
+Executing: nameParameter(width "w")
+
+Executing: nameParameter(res "r")
+
+Executing: extractRES("RNND" nsndres (nsd "PLUS" "MINUS") flagMalformed)
+
+Executing: width = measureParameter(length (nsndres inside bndiff) 5e-07)
+
+Executing: length = measureParameter(length (nsndres coincident bndiff) 5e-07)
+
+Executing: res = calculateParameter((((Rs * width) / (width + 6.75e-08)) * (length / wid...
+
+Executing: nameParameterlength("l")
+
+Executing: nameParameter(width "w")
+
+Executing: nameParameter(res "r")
+
+Executing: extractRES("RNPD" nspdres (psd "PLUS" "MINUS") flagMalformed)
+
+Executing: width = measureParameter(length (nspdres inside bpdiff) 5e-07)
+
+Executing: length = measureParameter(length (nspdres coincident bpdiff) 5e-07)
+
+Executing: res = calculateParameter((((158.66 * width) / (width + 8.7e-08)) * (length / ...
+
+Executing: nameParameterlength("l")
+
+Executing: nameParameter(width "w")
+
+Executing: nameParameter(res "r")
+
+Executing: extractRES("RNNPO" nsnpyr (ply "PLUS" "MINUS") flagMalformed)
+
+Executing: width = measureParameter(length (nsnpyr inside PO1) 5e-07)
+
+Executing: length = measureParameter(length (nsnpyr coincident PO1) 5e-07)
+
+Executing: res = calculateParameter((((2 * Rend) / (width + deltaW)) + ((Rs * length) / ...
+
+Executing: nameParameterlength("l")
+
+Executing: nameParameter(width "w")
+
+Executing: nameParameter(res "r")
+
+Executing: extractRES("RNPPO" nsppyr (ply "PLUS" "MINUS") flagMalformed)
+
+Executing: width = measureParameter(length (nsppyr inside PO1) 5e-07)
+
+Executing: length = measureParameter(length (nsppyr coincident PO1) 5e-07)
+
+Executing: res = calculateParameter((((2 * Rend) / (width + deltaW)) + ((Rs * length) / ...
+
+Executing: nameParameterlength("l")
+
+Executing: nameParameter(width "w")
+
+Executing: nameParameter(res "r")
+
+Executing: extractBJT("PNP_V50X50_G2" bjt_v5 (psub "C") (wel "B") (qte "E") flagMalformed)
+
+Executing: emitArea = measureParameter(area (bjt_v5 over qte))
+
+Executing: normalizedEmitArea = calculateParameter((emitArea * 1e-12))
+
+Executing: nameParameter(normalizedEmitArea "AREA")
+
+Executing: extractBJT("PNP_V100X100_G2" bjt_v10 (psub "C") (wel "B") (qte "E") flagMalfo...
+
+Executing: emitArea = measureParameter(area (bjt_v10 over qte))
+
+Executing: normalizedEmitArea = calculateParameter((emitArea * 1e-12))
+
+Executing: nameParameter(normalizedEmitArea "AREA")
+
+Executing: extractDIODE("DION_G2" dioden (psub "PLUS") (nsd "MINUS") flagMalformed)
+
+Executing: area_dn = measureParameter(area (dioden) 1e-12)
+
+Executing: perim_dn = measureParameter(perimeter (dioden) 1e-06)
+
+Executing: nameParameter(area_dn "area")
+
+Executing: nameParameter(perim_dn "pj")
+
+Executing: extractDIODE("DIOP_G2" diodep (psd "PLUS") (wel "MINUS") flagMalformed)
+
+Executing: area_dp = measureParameter(area (diodep) 1e-12)
+
+Executing: perim_dp = measureParameter(perimeter (diodep) 1e-06)
+
+Executing: nameParameter(area_dp "area")
+
+Executing: nameParameter(perim_dp "pj")
+
+Executing: extractDIODE("DIONW_G2" NWNACT (psub "PLUS") (wel "MINUS") flagMalformed)
+
+Executing: area = measureParameter(area (NWNACT) 1e-12)
+
+Executing: perim = measureParameter(perimeter (NWNACT) 1e-06)
+
+Executing: nameParameter(area "area")
+
+Executing: nameParameter(perim "pj")
+
+Executing: extractMOS("N_18_MM" ngate_mm (ply "G") (nsd "S" "D") (psub "B") flagMalformed)
+         3 'N_18_MM' created in cell 'OR2 layout traffic'.
+
+Executing: w_mos7 = measureParameter(length (ngate_mm coincident ply) 5e-07)
+
+Executing: a_mos7 = measureParameter(area (ngate_mm) 1e-12)
+
+Executing: l_mos7 = calculateParameter((a_mos7 / w_mos7))
+
+Executing: nameParameter(l_mos7 "l")
+
+Executing: nameParameter(w_mos7 "w")
+
+Executing: nameParameter(w_mos7 "effW")
+
+Executing: extractMOS("P_18_MM" pgate_mm (ply "G") (psd "S" "D") (wel "B") flagMalformed)
+         3 'P_18_MM' created in cell 'OR2 layout traffic'.
+
+Executing: w_mos8 = measureParameter(length (pgate_mm coincident ply) 5e-07)
+
+Executing: a_mos8 = measureParameter(area (pgate_mm) 1e-12)
+
+Executing: l_mos8 = calculateParameter((a_mos8 / w_mos8))
+
+Executing: nameParameter(l_mos8 "l")
+
+Executing: nameParameter(w_mos8 "w")
+
+Executing: nameParameter(w_mos8 "effW")
+
+Executing: extractMOS("N_18_MM" nmos_cap (ply "G") (nsd "S" "D") (psub "B") flagMalformed)
+
+Executing: w_cap = measureParameter(length (nmos_cap coincident ply) 5e-07)
+
+Executing: a_cap = measureParameter(area (nmos_cap) 1e-12)
+
+Executing: l_cap = calculateParameter((a_cap / w_cap))
+
+Executing: nameParameter(l_cap "l")
+
+Executing: nameParameter(w_cap "w")
+
+Executing: nameParameter(w_cap "effW")
+
+Executing: extractMOS("P_18_MM" pmos_cap (ply "G") (psd "S" "D") (wel "B") flagMalformed)
+
+Executing: w_cap = measureParameter(length (pmos_cap coincident ply) 5e-07)
+
+Executing: a_cap = measureParameter(area (pmos_cap) 1e-12)
+
+Executing: l_cap = calculateParameter((a_cap / w_cap))
+
+Executing: nameParameter(l_cap "l")
+
+Executing: nameParameter(w_cap "w")
+
+Executing: nameParameter(w_cap "effW")
+
+Executing: extractMOS("N_33_MM" hngate_mm (ply "G") (nsd "S" "D") (psub "B") flagMalformed)
+
+Executing: w_mos9 = measureParameter(length (hngate_mm coincident ply) 5e-07)
+
+Executing: a_mos9 = measureParameter(area (hngate_mm) 1e-12)
+
+Executing: l_mos9 = calculateParameter((a_mos9 / w_mos9))
+
+Executing: nameParameter(l_mos9 "l")
+
+Executing: nameParameter(w_mos9 "w")
+
+Executing: nameParameter(w_mos9 "effW")
+
+Executing: extractMOS("P_33_MM" hpgate_mm (ply "G") (psd "S" "D") (wel "B") flagMalformed)
+
+Executing: w_mos10 = measureParameter(length (hpgate_mm coincident ply) 5e-07)
+
+Executing: a_mos10 = measureParameter(area (hpgate_mm) 1e-12)
+
+Executing: l_mos10 = calculateParameter((a_mos10 / w_mos10))
+
+Executing: nameParameter(l_mos10 "l")
+
+Executing: nameParameter(w_mos10 "w")
+
+Executing: nameParameter(w_mos10 "effW")
+
+Executing: extractMOS("N_LV_18_MM" ngate_lvt (ply "G") (nsd "S" "D") (psub "B") flagMalf...
+
+Executing: w_mos11 = measureParameter(length (ngate_lvt coincident ply) 5e-07)
+
+Executing: a_mos11 = measureParameter(area (ngate_lvt) 1e-12)
+
+Executing: l_mos11 = calculateParameter((a_mos11 / w_mos11))
+
+Executing: nameParameter(l_mos11 "l")
+
+Executing: nameParameter(w_mos11 "w")
+
+Executing: nameParameter(w_mos11 "effW")
+
+Executing: extractMOS("P_LV_18_MM" pgate_lvt (ply "G") (psd "S" "D") (wel "B") flagMalfo...
+
+Executing: w_mos12 = measureParameter(length (pgate_lvt coincident ply) 5e-07)
+
+Executing: a_mos12 = measureParameter(area (pgate_lvt) 1e-12)
+
+Executing: l_mos12 = calculateParameter((a_mos12 / w_mos12))
+
+Executing: nameParameter(l_mos12 "l")
+
+Executing: nameParameter(w_mos12 "w")
+
+Executing: nameParameter(w_mos12 "effW")
+
+Executing: extractMOS("N_LV_33_MM" hngate_lvt (ply "G") (nsd "S" "D") (psub "B") flagMal...
+
+Executing: w_mos13 = measureParameter(length (hngate_lvt coincident ply) 5e-07)
+
+Executing: a_mos13 = measureParameter(area (hngate_lvt) 1e-12)
+
+Executing: l_mos13 = calculateParameter((a_mos13 / w_mos13))
+
+Executing: nameParameter(l_mos13 "l")
+
+Executing: nameParameter(w_mos13 "w")
+
+Executing: nameParameter(w_mos13 "effW")
+
+Executing: extractMOS("P_LV_33_MM" hpgate_lvt (ply "G") (psd "S" "D") (wel "B") flagMalf...
+
+Executing: w_mos14 = measureParameter(length (hpgate_lvt coincident ply) 5e-07)
+
+Executing: a_mos14 = measureParameter(area (hpgate_lvt) 1e-12)
+
+Executing: l_mos14 = calculateParameter((a_mos14 / w_mos14))
+
+Executing: nameParameter(l_mos14 "l")
+
+Executing: nameParameter(w_mos14 "w")
+
+Executing: nameParameter(w_mos14 "effW")
+
+Executing: extractMOS("N_ZERO_18_MM" ngate_zt (ply "G") (nsd "S" "D") (psub "B") flagMal...
+
+Executing: w_mos15 = measureParameter(length (ngate_zt coincident ply) 5e-07)
+
+Executing: a_mos15 = measureParameter(area (ngate_zt) 1e-12)
+
+Executing: l_mos15 = calculateParameter((a_mos15 / w_mos15))
+
+Executing: nameParameter(l_mos15 "l")
+
+Executing: nameParameter(w_mos15 "w")
+
+Executing: nameParameter(w_mos15 "effW")
+
+Executing: extractMOS("N_ZERO_33_MM" hngate_zt (ply "G") (nsd "S" "D") (psub "B") flagMa...
+
+Executing: w_mos16 = measureParameter(length (hngate_zt coincident ply) 5e-07)
+
+Executing: a_mos16 = measureParameter(area (hngate_zt) 1e-12)
+
+Executing: l_mos16 = calculateParameter((a_mos16 / w_mos16))
+
+Executing: nameParameter(l_mos16 "l")
+
+Executing: nameParameter(w_mos16 "w")
+
+Executing: nameParameter(w_mos16 "effW")
+
+Executing: extractMOS("N_BPW_18_MM" ngate_bpw (ply "G") (nsd "S" "D") (TWEL "B") flagMal...
+
+Executing: w_mos17 = measureParameter(length (ngate_bpw coincident ply) 5e-07)
+
+Executing: a_mos17 = measureParameter(area (ngate_bpw) 1e-12)
+
+Executing: l_mos17 = calculateParameter((a_mos17 / w_mos17))
+
+Executing: nameParameter(l_mos17 "l")
+
+Executing: nameParameter(w_mos17 "w")
+
+Executing: nameParameter(w_mos17 "effW")
+
+Executing: extractMOS("N_BPW_33_MM" hngate_bpw (ply "G") (nsd "S" "D") (TWEL "B") flagMa...
+
+Executing: w_mos18 = measureParameter(length (hngate_bpw coincident ply) 5e-07)
+
+Executing: a_mos18 = measureParameter(area (hngate_bpw) 1e-12)
+
+Executing: l_mos18 = calculateParameter((a_mos18 / w_mos18))
+
+Executing: nameParameter(l_mos18 "l")
+
+Executing: nameParameter(w_mos18 "w")
+
+Executing: nameParameter(w_mos18 "effW")
+
+Executing: extractDevice("RNNPO_MM" nsnpyr_mm (ply "PLUS" "MINUS") (psub "B") flagMalfor...
+
+Executing: width = measureParameter(length (nsnpyr_mm inside PO1) 5e-07)
+
+Executing: length = measureParameter(length (nsnpyr_mm coincident PO1) 5e-07)
+
+Executing: res = calculateParameter((((2 * Rend) / (width + deltaW)) + (Rs * (length / (...
+
+Executing: nameParameterlength("lr")
+
+Executing: nameParameter(width "wr")
+
+Executing: nameParameterlength("l")
+
+Executing: nameParameter(width "w")
+
+Executing: nameParameter(res "r")
+
+Executing: extractDevice("RNPPO_MM" nsppyr_mm (ply "PLUS" "MINUS") (wel "B") flagMalform...
+
+Executing: width = measureParameter(length (nsppyr_mm inside PO1) 5e-07)
+
+Executing: length = measureParameter(length (nsppyr_mm coincident PO1) 5e-07)
+
+Executing: res = calculateParameter((((2 * Rend) / (width + deltaW)) + (Rs * (length / (...
+
+Executing: nameParameterlength("lr")
+
+Executing: nameParameter(width "wr")
+
+Executing: nameParameterlength("l")
+
+Executing: nameParameter(width "w")
+
+Executing: nameParameter(res "r")
+
+Executing: extractDevice("RNHR1000_MM" hrpyres_mm (ply "PLUS" "MINUS") (wel "B") flagMal...
+
+Executing: width = measureParameter(length (hrpyres_mm inside PO1) 5e-07)
+
+Executing: length = measureParameter(length (hrpyres_mm coincident PO1) 5e-07)
+
+Executing: lx = calculateParameter((length - 4e-07))
+
+Executing: res = calculateParameter((((2 * Rend) / (width + deltaW)) + (Rs * (lx / (widt...
+
+Executing: nameParameterlength("lr")
+
+Executing: nameParameter(width "wr")
+
+Executing: nameParameterlength("l")
+
+Executing: nameParameter(width "w")
+
+Executing: nameParameter(res "r")
+
+Executing: extractDevice("RM1_MM" m1res (M1 "PLUS") (M1 "MINUS") (namePrefix "X") flagMa...
+
+Executing: width = measureParameter(length (m1res inside ME1) 5e-07)
+
+Executing: length = measureParameter(length (m1res coincident ME1) 5e-07)
+
+Executing: res = calculateParameter(((Rs * length) / width))
+
+Executing: nameParameterlength("lr")
+
+Executing: nameParameter(width "wr")
+
+Executing: nameParameterlength("l")
+
+Executing: nameParameter(width "w")
+
+Executing: nameParameter(res "r")
+
+Executing: extractDevice("RM2_MM" m2res (M2 "PLUS" "MINUS") (namePrefix "X") flagMalform...
+
+Executing: width = measureParameter(length (m2res inside ME2) 5e-07)
+
+Executing: length = measureParameter(length (m2res coincident ME2) 5e-07)
+
+Executing: res = calculateParameter(((Rs * length) / width))
+
+Executing: nameParameterlength("lr")
+
+Executing: nameParameter(width "wr")
+
+Executing: nameParameterlength("l")
+
+Executing: nameParameter(width "w")
+
+Executing: nameParameter(res "r")
+
+Executing: extractDevice("RM3_MM" m3res (me3c "PLUS" "MINUS") (namePrefix "X") flagMalfo...
+
+Executing: width = measureParameter(length (m3res inside ME3) 5e-07)
+
+Executing: length = measureParameter(length (m3res coincident ME3) 5e-07)
+
+Executing: res = calculateParameter(((Rs * length) / width))
+
+Executing: nameParameterlength("lr")
+
+Executing: nameParameter(width "wr")
+
+Executing: nameParameterlength("l")
+
+Executing: nameParameter(width "w")
+
+Executing: nameParameter(res "r")
+
+Executing: extractDevice("RM4_MM" m4res (me4c "PLUS" "MINUS") (namePrefix "X") flagMalfo...
+
+Executing: width = measureParameter(length (m4res inside ME4) 5e-07)
+
+Executing: length = measureParameter(length (m4res coincident ME4) 5e-07)
+
+Executing: res = calculateParameter(((Rs * length) / width))
+
+Executing: nameParameterlength("lr")
+
+Executing: nameParameter(width "wr")
+
+Executing: nameParameterlength("l")
+
+Executing: nameParameter(width "w")
+
+Executing: nameParameter(res "r")
+
+Executing: extractDevice("RM5_MM" m5res (slm_c "PLUS" "MINUS") (namePrefix "X") flagMalf...
+
+Executing: width = measureParameter(length (m5res inside ME5) 5e-07)
+
+Executing: length = measureParameter(length (m5res coincident ME5) 5e-07)
+
+Executing: res = calculateParameter(((Rs * length) / width))
+
+Executing: nameParameterlength("lr")
+
+Executing: nameParameter(width "wr")
+
+Executing: nameParameterlength("l")
+
+Executing: nameParameter(width "w")
+
+Executing: nameParameter(res "r")
+
+Executing: extractDevice("RM6_MM" m6res (top_m_c "PLUS" "MINUS") (namePrefix "X") flagMa...
+
+Executing: width = measureParameter(length (m6res inside ME6) 5e-07)
+
+Executing: length = measureParameter(length (m6res coincident ME6) 5e-07)
+
+Executing: res = calculateParameter(((Rs * length) / width))
+
+Executing: nameParameterlength("lr")
+
+Executing: nameParameter(width "wr")
+
+Executing: nameParameterlength("l")
+
+Executing: nameParameter(width "w")
+
+Executing: nameParameter(res "r")
+
+Executing: extractBJT("PNP_V50X50_MM" bjt_v5_mm (psub "C") (wel "B") (qte "E") flagMalfo...
+
+Executing: emitArea = measureParameter(area (bjt_v5_mm over qte))
+
+Executing: normalizedEmitArea = calculateParameter((emitArea * 1e-12))
+
+Executing: nameParameter(normalizedEmitArea "AREA")
+
+Executing: extractBJT("PNP_V100X100_MM" bjt_v10_mm (psub "C") (wel "B") (qte "E") flagMa...
+
+Executing: emitArea = measureParameter(area (bjt_v10_mm over qte))
+
+Executing: normalizedEmitArea = calculateParameter((emitArea * 1e-12))
+
+Executing: nameParameter(normalizedEmitArea "AREA")
+
+Executing: extractDevice("MIMCAPS_MM" cmmc_mm (MMC "PLUS") (slm_c "MINUS") (namePrefix "...
+
+Executing: A = measureParameter(area (cmmc_mm) 1e-12)
+
+Executing: P = measureParameter(perimeter (cmmc_mm) 1e-06)
+
+Executing: Cap_mmc = calculateParameter(((Ca * A) + (Cf * P)))
+
+Executing: width_mmc = calculateParameter((((P / 2) - sqrt((((P * P) / 4) - (4 * A)))) /...
+
+Executing: length_mmc = calculateParameter((A / width_mmc))
+
+Executing: nameParameter(Cap_mmc "c")
+
+Executing: nameParameter(width_mmc "w")
+
+Executing: nameParameter(length_mmc "l")
+
+Executing: extractDIODE("DION_MM" dioden_mm (psub "PLUS") (nsd "MINUS") flagMalformed)
+
+Executing: area_dn_mm = measureParameter(area (dioden_mm) 1e-12)
+
+Executing: perim_dn_mm = measureParameter(perimeter (dioden_mm) 1e-06)
+
+Executing: nameParameter(area_dn_mm "area")
+
+Executing: nameParameter(perim_dn_mm "pj")
+
+Executing: extractDIODE("DIOP_MM" diodep_mm (psd "PLUS") (wel "MINUS") flagMalformed)
+
+Executing: area_dp_mm = measureParameter(area (diodep_mm) 1e-12)
+
+Executing: perim_dp_mm = measureParameter(perimeter (diodep_mm) 1e-06)
+
+Executing: nameParameter(area_dp_mm "area")
+
+Executing: nameParameter(perim_dp_mm "pj")
+
+Executing: extractDIODE("DIONW_MM" NWNACT_MM (psub "PLUS") (wel "MINUS") flagMalformed)
+
+Executing: area = measureParameter(area (NWNACT_MM) 1e-12)
+
+Executing: perim = measureParameter(perimeter (NWNACT_MM) 1e-06)
+
+Executing: nameParameter(area "area")
+
+Executing: nameParameter(perim "pj")
+
+Executing: extractDevice("N_L18W500_18_RF" ng_rf (rfnd "D") (ply "G") (rfns "S") (psub "...
+
+Executing: attachParameter(m_mos19 "nf" ng_rf)
+
+Executing: attachParameter(length19 "l" ng_rf)
+
+Executing: attachParameter(width19 "w" ng_rf)
+
+Executing: extractDevice("N_PO7W500_18_RF" ng_srf (rfnd "D") (ply "G") (rfns "S") (psub ...
+
+Executing: attachParameter(m_mos20 "nf" ng_srf)
+
+Executing: attachParameter(length20 "l" ng_srf)
+
+Executing: attachParameter(width20 "w" ng_srf)
+
+Executing: extractDevice("P_L18W500_18_RF" pg_rf (rfpd "D") (ply "G") (rfps "S") (wel "B...
+
+Executing: attachParameter(m_mos21 "nf" pg_rf)
+
+Executing: attachParameter(length21 "l" pg_rf)
+
+Executing: attachParameter(width21 "w" pg_rf)
+
+Executing: extractDevice("P_PO7W500_18_RF" pg_srf (rfpd "D") (ply "G") (rfps "S") (wel "...
+
+Executing: attachParameter(m_mos22 "nf" pg_srf)
+
+Executing: attachParameter(length22 "l" pg_srf)
+
+Executing: attachParameter(width22 "w" pg_srf)
+
+Executing: extractDevice("N_L34W500_33_RF" hng_rf (rfnd "D") (ply "G") (rfns "S") (psub ...
+
+Executing: attachParameter(m_mos23 "nf" hng_rf)
+
+Executing: attachParameter(length23 "l" hng_rf)
+
+Executing: attachParameter(width23 "w" hng_rf)
+
+Executing: extractDevice("N_PO7W500_33_RF" hng_srf (rfnd "D") (ply "G") (rfns "S") (psub...
+
+Executing: attachParameter(m_mos24 "nf" hng_srf)
+
+Executing: attachParameter(length24 "l" hng_srf)
+
+Executing: attachParameter(width24 "w" hng_srf)
+
+Executing: extractDevice("P_L34W500_33_RF" hpg_rf (rfpd "D") (ply "G") (rfps "S") (wel "...
+
+Executing: attachParameter(m_mos25 "nf" hpg_rf)
+
+Executing: attachParameter(length25 "l" hpg_rf)
+
+Executing: attachParameter(width25 "w" hpg_rf)
+
+Executing: extractDevice("P_PO7W500_33_RF" hpg_srf (rfpd "D") (ply "G") (rfps "S") (wel ...
+
+Executing: attachParameter(m_mos26 "nf" hpg_srf)
+
+Executing: attachParameter(length26 "l" hpg_srf)
+
+Executing: attachParameter(width26 "w" hpg_srf)
+
+Executing: extractDevice("RNNPO_RF" nsnpyr_rf (ply "PLUS" "MINUS") (psub "B") flagMalfor...
+
+Executing: attachParameter(res "r" nsnpyr_rf)
+
+Executing: attachParameter(length "l" nsnpyr_rf)
+
+Executing: attachParameter(width "w" nsnpyr_rf)
+
+Executing: extractDevice("RNPPO_RF" nsppyr_rf (ply "PLUS" "MINUS") (wel "B") flagMalformed)
+
+Executing: attachParameter(res "r" nsppyr_rf)
+
+Executing: attachParameter(length "l" nsppyr_rf)
+
+Executing: attachParameter(width "w" nsppyr_rf)
+
+Executing: extractDevice("RNHR_RF" hrpyres_rf (ply "PLUS" "MINUS") (wel "B") flagMalformed)
+
+Executing: attachParameter(res "r" hrpyres_rf)
+
+Executing: attachParameter(width "w" hrpyres_rf)
+
+Executing: attachParameter(length "l" hrpyres_rf)
+
+Executing: extractDevice("VARMIS_18_RF" varmis_rf (slm_term "PLUS") (wel "MINUS") (psub ...
+
+Executing: attachParameter(nf "nf" varmis_rf)
+
+Executing: attachParameter(cap_mis "c" varmis_rf)
+
+Executing: extractDevice("VARDIOP_RF" vard_rf (psd "PLUS") (wel "MINUS") flagMalformed)
+
+Executing: A = measureParameter(area (pnvar) 1e-12)
+
+Executing: P = measureParameter(perimeter (pnvar) 1e-06)
+
+Executing: Cap_vard = calculateParameter(((Ca * A) + (Cf * P)))
+
+Executing: attachParameter(nf "nf" vard_rf)
+
+Executing: attachParameter(Cap_vard "c" vard_rf)
+
+Executing: extractDevice("MIMCAPM_RF" cmmc_msq_rf (MMC "PLUS") (slm_c "MINUS") (psub "B"...
+
+Executing: area_mmc_rf = measureParameter(area (cmmc_msq) 1e-12)
+
+Executing: perim_mmc_rf = measureParameter(perimeter (cmmc_msq) 1e-06)
+
+Executing: Cap_mmc_rf = calculateParameter(((Ca * area_mmc_rf) + (Cf * perim_mmc_rf)))
+
+Executing: attachParameter(nx "nx" cmmc_msq_rf)
+
+Executing: attachParameter(ny "ny" cmmc_msq_rf)
+
+Executing: attachParameter(Cap_mmc_rf "c" cmmc_msq_rf)
+
+Executing: attachParameter(width_mmc_rf "w" cmmc_msq_rf)
+
+Executing: attachParameter(length_mmc_rf "l" cmmc_msq_rf)
+
+Executing: extractDevice("PAD_RF" rf_pad (top_m_c "PLUS") (M1 "MINUS") (namePrefix "X") ...
+
+Executing: attachParameterindex("index" rf_pad)
+
+Executing: extractDevice("L_SLCR20K_RF" ind_me (ind_plus "PLUS") (ind_minus "MINUS") (ps...
+
+Executing: P = measureParameter(perimeter (ldimeter) 5e-07)
+
+Executing: A = measureParameter(area (ldimeter) 1e-12)
+
+Executing: OD = calculateParameter(((P - sqrt(((P * P) - (4 * A)))) / 2))
+
+Executing: attachParameter(W "w" ind_me)
+
+Executing: attachParameter(N "n" ind_me)
+
+Executing: attachParameter(D "d" ind_me)
+
+Executing: attachParameter(L "l" ind_me)
+
+Finished running rules. Task processor time in main process:
+cpu: 0.41  elap: 0  pf: 1  in: 0  out: 0  virt: 47M  phys: 0M
+
+No output post-processing: This is not a DRC run
+
+Finished building the persistent database.
+cpu: 0.06  elap: 0  pf: 0  in: 0  out: 0  virt: 47M  phys: 0M
+
+
+*****  aveng terminated normally  *****
+
+
+Finished /cad/cadence/ASSURA316/tools/assura/bin/aveng
+
+Starting /cad/cadence/ASSURA316/tools/assura/bin/avrpt /home/summer_training/cadence/traffic/OR2.rsf
+
+Loading tech rule set file : /home/summer_training/cadence/umc_design/RuleDecks/Assura/techRuleSets
+error:  Please check the '/home/summer_training/cadence/umc_design/RuleDecks/Assura/techRuleSets' file for the existence of the techRuleSet 'LVS', file group 'DrcRules' and the existence of files specified for this file group.  Using technology 'UMC_18_CMOS' and techLib '/home/summer_training/cadence/umc_design/assura_tech.lib'.
+warn:   Contain mcf flow command but not activated.
+To activate a DX flow, use the aveng command line option '-execN'; where N
+is the number of the flow control command.
+@(#)$CDS: avrpt version av3.1:Production:dfII5.1.41 09/13/2006 11:58 (tux21ee) $
+sub-version 3.1.6_USR1, integ signature 2006-08-17-1147j
+
+run on vlsi13 from /cad/cadence/ASSURA316/tools.lnx86/assura/bin/32bit/avrpt on Wed Jul  7 17:10:09 2010
+
+
+   Creating Error Database 'OR2'...
+
+   Reading VDB ...
+--------------------------------------------------------------------------------
+Rule      Message                                    FlatCount     RealCount
+--------------------------------------------------------------------------------
+(    1)  dataAuditErrors                                     0            0
+(    2)   nsd/ptap butting issue: nsd/ptap need t            0            0
+(    3)   psd/ntap butting issue: psd/ntap need t            0            0
+(    4)  PTAP is wrongly connected to POWER !                0            0
+(    5)  NTAP is wrongly connected to GROUND !               0            0
+(    6)  psub_StampErrorFloat                                0            0
+(    7)  psub_StampErrorMult                                 0            0
+(    8)  psub_StampErrorConnect                              0            0
+(    9)  wel_StampErrorFloat                                 0            0
+(   10)  wel_StampErrorMult                                  0            0
+(   11)  wel_StampErrorConnect                               0            0
+(   12)  TWEL_StampErrorFloat                                0            0
+(   13)  TWEL_StampErrorMult                                 0            0
+(   14)  TWEL_StampErrorConnect                              0            0
+(   15)  malformed device ngate_sp                           0            0
+(   16)  malformed device pgate_sp                           0            0
+(   17)  malformed device hngate_sp                          0            0
+(   18)  malformed device hpgate_sp                          0            0
+(   19)  malformed device ng_sram                            0            0
+(   20)  malformed device RBNPG_B6T400                       0            0
+(   21)  malformed device RBNPD_B6T400                       0            0
+(   22)  malformed device RBPGAT_B6T400                      0            0
+(   23)  malformed device RBNPG_B8T1020                      0            0
+(   24)  malformed device RBNPD_B8T1020                      0            0
+(   25)  malformed device RBPGAT_B8T1020                     0            0
+(   26)  malformed device pg_sram                            0            0
+(   27)  malformed device welres                             0            0
+(   28)  malformed device sndres                             0            0
+(   29)  malformed device spdres                             0            0
+(   30)  malformed device snpyr                              0            0
+(   31)  malformed device sppyr                              0            0
+(   32)  malformed device nsndres                            0            0
+(   33)  malformed device nspdres                            0            0
+(   34)  malformed device nsnpyr                             0            0
+(   35)  malformed device nsppyr                             0            0
+(   36)  malformed device bjt_v5                             0            0
+(   37)  malformed device bjt_v10                            0            0
+(   38)  malformed device dioden                             0            0
+(   39)  malformed device diodep                             0            0
+(   40)  malformed device NWNACT                             0            0
+(   41)  malformed device ngate_mm                           0            0
+(   42)  malformed device pgate_mm                           0            0
+(   43)  malformed device nmos_cap                           0            0
+(   44)  malformed device pmos_cap                           0            0
+(   45)  malformed device hngate_mm                          0            0
+(   46)  malformed device hpgate_mm                          0            0
+(   47)  malformed device ngate_lvt                          0            0
+(   48)  malformed device pgate_lvt                          0            0
+(   49)  malformed device hngate_lvt                         0            0
+(   50)  malformed device hpgate_lvt                         0            0
+(   51)  malformed device ngate_zt                           0            0
+(   52)  malformed device hngate_zt                          0            0
+(   53)  malformed device ngate_bpw                          0            0
+(   54)  malformed device hngate_bpw                         0            0
+(   55)  malformed device nsnpyr_mm                          0            0
+(   56)  malformed device nsppyr_mm                          0            0
+(   57)  malformed device hrpyres_mm                         0            0
+(   58)  malformed device m1res                              0            0
+(   59)  malformed device m2res                              0            0
+(   60)  malformed device m3res                              0            0
+(   61)  malformed device m4res                              0            0
+(   62)  malformed device m5res                              0            0
+(   63)  malformed device m6res                              0            0
+(   64)  malformed device bjt_v5_mm                          0            0
+(   65)  malformed device bjt_v10_mm                         0            0
+(   66)  malformed device cmmc_mm                            0            0
+(   67)  malformed device dioden_mm                          0            0
+(   68)  malformed device diodep_mm                          0            0
+(   69)  malformed device NWNACT_MM                          0            0
+(   70)  malformed device ng_rf                              0            0
+(   71)  malformed device ng_srf                             0            0
+(   72)  malformed device pg_rf                              0            0
+(   73)  malformed device pg_srf                             0            0
+(   74)  malformed device hng_rf                             0            0
+(   75)  malformed device hng_srf                            0            0
+(   76)  malformed device hpg_rf                             0            0
+(   77)  malformed device hpg_srf                            0            0
+(   78)  malformed device nsnpyr_rf                          0            0
+(   79)  malformed device nsppyr_rf                          0            0
+(   80)  malformed device hrpyres_rf                         0            0
+(   81)  malformed device varmis_rf                          0            0
+(   82)  malformed device vard_rf                            0            0
+(   83)  malformed device cmmc_msq_rf                        0            0
+(   84)  malformed device rf_pad                             0            0
+(   85)  malformed device ind_me                             0            0
+(   86)  unstable device for ind_me_Device_1409              0            0
+(   87)  unstable device for rf_pad_Device_1390              0            0
+(   88)  unstable device for cmmc_msq_rf_Device_1            0            0
+(   89)  unstable device for vard_rf_Device_1350             0            0
+(   90)  unstable device for varmis_rf_Device_132            0            0
+(   91)  unstable device for hrpyres_rf_Device_12            0            0
+(   92)  unstable device for nsppyr_rf_Device_128            0            0
+(   93)  unstable device for nsnpyr_rf_Device_126            0            0
+(   94)  unstable device for hpg_srf_Device_1235             0            0
+(   95)  unstable device for hpg_rf_Device_1205              0            0
+(   96)  unstable device for hng_srf_Device_1175             0            0
+(   97)  unstable device for hng_rf_Device_1145              0            0
+(   98)  unstable device for pg_srf_Device_1115              0            0
+(   99)  unstable device for pg_rf_Device_1085               0            0
+(  100)  unstable device for ng_srf_Device_1055              0            0
+(  101)  unstable device for ng_rf_Device_1025               0            0
+(  102)  unstable device for NWNACT_MM_DIODE_1014            0            0
+(  103)  unstable device for diodep_mm_DIODE_1007            0            0
+(  104)  unstable device for dioden_mm_DIODE_1000            0            0
+(  105)  unstable device for cmmc_mm_Device_990              0            0
+(  106)  unstable device for bjt_v10_mm_BJT_982              0            0
+(  107)  unstable device for bjt_v5_mm_BJT_972               0            0
+(  108)  unstable device for m6res_Device_960                0            0
+(  109)  unstable device for m5res_Device_952                0            0
+(  110)  unstable device for m4res_Device_944                0            0
+(  111)  unstable device for m3res_Device_936                0            0
+(  112)  unstable device for m2res_Device_928                0            0
+(  113)  unstable device for m1res_Device_920                0            0
+(  114)  unstable device for hrpyres_mm_Device_91            0            0
+(  115)  unstable device for nsppyr_mm_Device_901            0            0
+(  116)  unstable device for nsnpyr_mm_Device_891            0            0
+(  117)  unstable device for hngate_bpw_MOS_882              0            0
+(  118)  unstable device for ngate_bpw_MOS_871               0            0
+(  119)  unstable device for hngate_zt_MOS_860               0            0
+(  120)  unstable device for ngate_zt_MOS_849                0            0
+(  121)  unstable device for hpgate_lvt_MOS_838              0            0
+(  122)  unstable device for hngate_lvt_MOS_827              0            0
+(  123)  unstable device for pgate_lvt_MOS_816               0            0
+(  124)  unstable device for ngate_lvt_MOS_805               0            0
+(  125)  unstable device for hpgate_mm_MOS_794               0            0
+(  126)  unstable device for hngate_mm_MOS_783               0            0
+(  127)  unstable device for pmos_cap_MOS_772                0            0
+(  128)  unstable device for nmos_cap_MOS_761                0            0
+(  129)  unstable device for pgate_mm_MOS_750                0            0
+(  130)  unstable device for ngate_mm_MOS_739                0            0
+(  131)  unstable device for NWNACT_DIODE_730                0            0
+(  132)  unstable device for diodep_DIODE_723                0            0
+(  133)  unstable device for dioden_DIODE_716                0            0
+(  134)  unstable device for bjt_v10_BJT_708                 0            0
+(  135)  unstable device for bjt_v5_BJT_698                  0            0
+(  136)  unstable device for nsppyr_RES_686                  0            0
+(  137)  unstable device for nsnpyr_RES_678                  0            0
+(  138)  unstable device for nspdres_RES_670                 0            0
+(  139)  unstable device for nsndres_RES_662                 0            0
+(  140)  unstable device for sppyr_RES_654                   0            0
+(  141)  unstable device for snpyr_RES_646                   0            0
+(  142)  unstable device for spdres_RES_638                  0            0
+(  143)  unstable device for sndres_RES_630                  0            0
+(  144)  unstable device for welres_RES_622                  0            0
+(  145)  unstable device for pg_sram_MOS_615                 0            0
+(  146)  unstable device for RBPGAT_B8T1020_MOS_6            0            0
+(  147)  unstable device for RBNPD_B8T1020_MOS_59            0            0
+(  148)  unstable device for RBNPG_B8T1020_MOS_58            0            0
+(  149)  unstable device for RBPGAT_B6T400_MOS_57            0            0
+(  150)  unstable device for RBNPD_B6T400_MOS_560            0            0
+(  151)  unstable device for RBNPG_B6T400_MOS_549            0            0
+(  152)  unstable device for ng_sram_MOS_538                 0            0
+(  153)  unstable device for hpgate_sp_MOS_526               0            0
+(  154)  unstable device for hngate_sp_MOS_514               0            0
+(  155)  unstable device for pgate_sp_MOS_502                0            0
+(  156)  unstable device for ngate_sp_MOS_490                0            0
+--------------------------------------------------------------------------------
+Total  errors:                                               0            0
+--------------------------------------------------------------------------------
+
+   Finished creating Error Database ...
+
+   Writing Report into /home/summer_training/cadence/traffic/OR2.err ...
+
+avrpt cpu sec:    0.07  elapsed:     0  virtual:    12M
+
+Finished /cad/cadence/ASSURA316/tools/assura/bin/avrpt
+
+Starting /cad/cadence/ASSURA316/tools/assura/bin/avcallproc /home/summer_training/cadence/traffic/OR2.rsf -exec1 -LVS -cdslib /home/summer_training/cadence/cds.lib
+
+Loading tech rule set file : /home/summer_training/cadence/umc_design/RuleDecks/Assura/techRuleSets
+
+Finished /cad/cadence/ASSURA316/tools/assura/bin/avcallproc
+
+Starting /cad/cadence/ASSURA316/tools/assura/bin/avnx /home/summer_training/cadence/traffic/OR2.rsf -exec1 -LVS -cdslib /home/summer_training/cadence/cds.lib
+
+Loading tech rule set file : /home/summer_training/cadence/umc_design/RuleDecks/Assura/techRuleSets
+Checking out license for Assura_LVS 3.10
+@(#)$CDS: avnx.exe version av3.1:Production:dfII5.1.41 09/13/2006 11:58 (tux21ee) $
+sub-version 3.1.6_USR1, integ signature 2006-08-17-1147j
+
+run on vlsi13 from /cad/cadence/ASSURA316/tools.lnx86/assura/bin/32bit/avnx.exe on Wed Jul  7 17:10:09 2010
+
+avnx started...
+cpu: 0.14  elap: 0  pf: 8  in: 0  out: 0  virt: 29M  phys: 0M
+
+Run time =  1.00 seconds
+CPU time =  0.16 seconds
+
+                  End of Summary Report
+
+************************************************************************
+***** avnx terminated normally ***** 
+
+
+Finished /cad/cadence/ASSURA316/tools/assura/bin/avnx
+
+Starting /cad/cadence/ASSURA316/tools/assura/bin/nvn /home/summer_training/cadence/traffic/OR2.rsf -postExtract -exec1 -cdslib /home/summer_training/cadence/cds.lib
+@(#)$CDS: nvn version av3.1:Production:dfII5.1.41 09/13/2006 12:00 (tux21ee) $
+sub-version 3.1.6_USR1, integ signature 2006-08-17-1147j
+run on vlsi13 at Wed Jul  7 17:10:10 2010
+*WARNING* the rule 'filter' has been converted into 'filterOptions' with the same function.
+Reading schematic network
+Reading layout network
+ inputting network /home/summer_training/cadence/traffic/OR2.ldb
+Preprocessing schematic network phase 1
+Preprocessing layout network phase 1
+*WARNING* indDevice - cell 'L_SLCR20K_RF(GENERIC)' not found.
+*WARNING* capDevice - cell 'PAD_RF(GENERIC)' not found.
+*WARNING* capDevice - cell 'MIMCAPM_RF(GENERIC)' not found.
+*WARNING* capDevice - cell 'MIMCAPS_MM(GENERIC)' not found.
+*WARNING* capDevice - cell 'VARDIOP_RF(GENERIC)' not found.
+*WARNING* capDevice - cell 'VARMIS_18_RF(GENERIC)' not found.
+*WARNING* resDevice - cell 'RNHR_RF(GENERIC)' not found.
+*WARNING* resDevice - cell 'RNHR1000_MM(GENERIC)' not found.
+*WARNING* resDevice - cell 'RNPPO_RF(GENERIC)' not found.
+*WARNING* resDevice - cell 'RNPPO_MM(GENERIC)' not found.
+*WARNING* resDevice - cell 'RNNPO_RF(GENERIC)' not found.
+*WARNING* resDevice - cell 'RNNPO_MM(GENERIC)' not found.
+*WARNING* mosDevice - cell 'P_PO7W500_33_RF(GENERIC)' not found.
+*WARNING* mosDevice - cell 'P_PO7W500_18_RF(GENERIC)' not found.
+*WARNING* mosDevice - cell 'P_L34W500_33_RF(GENERIC)' not found.
+*WARNING* mosDevice - cell 'P_L18W500_18_RF(GENERIC)' not found.
+*WARNING* mosDevice - cell 'N_PO7W500_33_RF(GENERIC)' not found.
+*WARNING* mosDevice - cell 'N_PO7W500_18_RF(GENERIC)' not found.
+*WARNING* mosDevice - cell 'N_L34W500_33_RF(GENERIC)' not found.
+*WARNING* mosDevice - cell 'N_L18W500_18_RF(GENERIC)' not found.
+Preprocessing schematic network phase 2
+Preprocessing layout network phase 2
+Top cell  OR2 schematic traffic vs OR2 layout traffic
+Schematic and Layout Match
+cpu=0.00m  wall=0.00m  mem=9.59mb
+
+Finished /cad/cadence/ASSURA316/tools/assura/bin/nvn
+
+Starting /cad/cadence/ASSURA316/tools/assura/bin/vldbToRpa OR2.snn OR2.tre OR2.cel
+
+Finished /cad/cadence/ASSURA316/tools/assura/bin/vldbToRpa
+
+Starting /cad/cadence/ASSURA316/tools/assura/bin/avcallproc /home/summer_training/cadence/traffic/OR2.rsf -trp -exec1
+
+Loading tech rule set file : /home/summer_training/cadence/umc_design/RuleDecks/Assura/techRuleSets
+
+Finished /cad/cadence/ASSURA316/tools/assura/bin/avcallproc
+
+
+Assura LVS terminated normally.
+
+
+
+Run ended: Wed Jul  7 17:10:10 2010
+
+*****  Assura terminated normally  *****
+

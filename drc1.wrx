@@ -1,0 +1,83 @@
+*WARNING* Multiple label discarded: "VDD" at (11.395, 23.345) and "GND1" on net C1.
+*WARNING* Net C1: multiple Labels on a single Net, 
+therefore, "pinvout" at (12.265, 20.515) is discarded.
+*WARNING* 2 net(s) with multi-label warnings found in cell 'traffic layout traffic'.
+*WARNING* Nets C1 and C3 are associated with the same label "GND1" at (5.046, 2.966). See .erc file  for  details.
+*WARNING* Net C1: multiple Labels on a single Net, 
+therefore, "out" at (15.080, 5.670) is discarded.
+*WARNING* 2 net(s) with multi-label warnings found in cell 'AND2 layout traffic'.
+*WARNING* 1 same-label  warning  found in cell 'AND2 layout traffic'.
+*WARNING* Multiple label discarded: "GND1" at (9.720, 8.657) and "VDD1" on net C2.
+*WARNING* 1 net(s) with multi-label warning  found in cell 'OR2 layout traffic'.
+*WARNING* Multiple label discarded: "VDD1" at (11.937, 14.465) and "OUT" on net C1.
+*WARNING* Net C1: multiple Labels on a single Net, 
+therefore, "GND1" at (9.720, 8.657) is discarded.
+*WARNING* 2 net(s) with multi-label warnings found in cell 'OR2 layout traffic'.
+*WARNING* Multiple label discarded: "VDD1" at (11.937, 14.465) and "OUT" on net C1.
+*WARNING* Net C1: multiple Labels on a single Net, 
+therefore, "GND1" at (9.720, 8.657) is discarded.
+*WARNING* 2 net(s) with multi-label warnings found in cell 'OR2 layout traffic'.
+*WARNING* Multiple label discarded: "VDD1" at (11.937, 14.465) and "OUT" on net C1.
+*WARNING* Net C1: multiple Labels on a single Net, 
+therefore, "GND1" at (9.720, 8.657) is discarded.
+*WARNING* 2 net(s) with multi-label warnings found in cell 'OR2 layout traffic'.
+*WARNING* Multiple label discarded: "VDD1" at (11.937, 14.465) and "OUT" on net C1.
+*WARNING* Net C1: multiple Labels on a single Net, 
+therefore, "GND1" at (9.720, 8.657) is discarded.
+*WARNING* 2 net(s) with multi-label warnings found in cell 'OR2 layout traffic'.
+*WARNING* Multiple label discarded: "GND1" at (5.046, 2.966) and "VDD1" on net C1.
+*WARNING* Net C1: multiple Labels on a single Net, 
+therefore, "out" at (15.080, 5.670) is discarded.
+*WARNING* 2 net(s) with multi-label warnings found in cell 'AND2 layout traffic'.
+*WARNING* Multiple label discarded: "GND1" at (5.046, 2.966) and "VDD1" on net C1.
+*WARNING* Net C1: multiple Labels on a single Net, 
+therefore, "out" at (15.080, 5.670) is discarded.
+*WARNING* 2 net(s) with multi-label warnings found in cell 'AND2 layout traffic'.
+*WARNING* Multiple label discarded: "GND1" at (5.046, 2.966) and "VDD1" on net C1.
+*WARNING* Net C1: multiple Labels on a single Net, 
+therefore, "out" at (15.080, 5.670) is discarded.
+*WARNING* 2 net(s) with multi-label warnings found in cell 'AND2 layout traffic'.
+*WARNING* Multiple label discarded: "GND1" at (5.046, 2.966) and "VDD1" on net C1.
+*WARNING* Net C1: multiple Labels on a single Net, 
+therefore, "out" at (15.080, 5.670) is discarded.
+*WARNING* 2 net(s) with multi-label warnings found in cell 'AND2 layout traffic'.
+*WARNING* Multiple label discarded: "GND1" at (5.046, 2.966) and "VDD1" on net C1.
+*WARNING* Net C1: multiple Labels on a single Net, 
+therefore, "out" at (15.080, 5.670) is discarded.
+*WARNING* 2 net(s) with multi-label warnings found in cell 'AND2 layout traffic'.
+*WARNING* Multiple label discarded: "GND1" at (5.046, 2.966) and "VDD1" on net C1.
+*WARNING* Net C1: multiple Labels on a single Net, 
+therefore, "out" at (15.080, 5.670) is discarded.
+*WARNING* 2 net(s) with multi-label warnings found in cell 'AND2 layout traffic'.
+*WARNING* Multiple label discarded: "GND1" at (5.046, 2.966) and "VDD1" on net C1.
+*WARNING* Net C1: multiple Labels on a single Net, 
+therefore, "out" at (15.080, 5.670) is discarded.
+*WARNING* 2 net(s) with multi-label warnings found in cell 'AND2 layout traffic'.
+*WARNING* Multiple label discarded: "GND1" at (5.046, 2.966) and "VDD1" on net C1.
+*WARNING* Net C1: multiple Labels on a single Net, 
+therefore, "out" at (15.080, 5.670) is discarded.
+*WARNING* 2 net(s) with multi-label warnings found in cell 'AND2 layout traffic'.
+*WARNING* Multiple label discarded: "GND1" at (5.046, 2.966) and "VDD1" on net C1.
+*WARNING* Net C1: multiple Labels on a single Net, 
+therefore, "out" at (15.080, 5.670) is discarded.
+*WARNING* 2 net(s) with multi-label warnings found in cell 'AND2 layout traffic'.
+*WARNING* Multiple label discarded: "GND1" at (5.046, 2.966) and "VDD1" on net C1.
+*WARNING* Net C1: multiple Labels on a single Net, 
+therefore, "out" at (15.080, 5.670) is discarded.
+*WARNING* 2 net(s) with multi-label warnings found in cell 'AND2 layout traffic'.
+*WARNING* Multiple label discarded: "GND1" at (5.046, 2.966) and "VDD1" on net C1.
+*WARNING* Net C1: multiple Labels on a single Net, 
+therefore, "out" at (15.080, 5.670) is discarded.
+*WARNING* 2 net(s) with multi-label warnings found in cell 'AND2 layout traffic'.
+*WARNING* Multiple label discarded: "GND1" at (5.046, 2.966) and "VDD1" on net C2.
+*WARNING* Net C2: multiple Labels on a single Net, 
+therefore, "out" at (15.080, 5.670) is discarded.
+*WARNING* 2 net(s) with multi-label warnings found in cell 'AND2 layout traffic'.
+*WARNING* Multiple label discarded: "GND1" at (5.046, 2.966) and "VDD1" on net C2.
+*WARNING* Net C2: multiple Labels on a single Net, 
+therefore, "out" at (15.080, 5.670) is discarded.
+*WARNING* 2 net(s) with multi-label warnings found in cell 'AND2 layout traffic'.
+*WARNING* Multiple label discarded: "GND1" at (5.046, 2.966) and "VDD1" on net C2.
+*WARNING* Net C2: multiple Labels on a single Net, 
+therefore, "out" at (15.080, 5.670) is discarded.
+*WARNING* 2 net(s) with multi-label warnings found in cell 'AND2 layout traffic'.

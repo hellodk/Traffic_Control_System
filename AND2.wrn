@@ -1,0 +1,25 @@
+Assura Errors & Warnings Search (PLEASE CAREFULLY REVIEW THESE MESSAGES)
+================================================================================
+WARNINGS & ERRORS found in Assura NVN Run Log file
+--------------------------------------------------------------------------------
+*WARNING* the rule 'filter' has been converted into 'filterOptions' with the same function.
+*WARNING* indDevice - cell 'L_SLCR20K_RF(GENERIC)' not found.
+*WARNING* capDevice - cell 'PAD_RF(GENERIC)' not found.
+*WARNING* capDevice - cell 'MIMCAPM_RF(GENERIC)' not found.
+*WARNING* capDevice - cell 'MIMCAPS_MM(GENERIC)' not found.
+*WARNING* capDevice - cell 'VARDIOP_RF(GENERIC)' not found.
+*WARNING* capDevice - cell 'VARMIS_18_RF(GENERIC)' not found.
+*WARNING* resDevice - cell 'RNHR_RF(GENERIC)' not found.
+*WARNING* resDevice - cell 'RNHR1000_MM(GENERIC)' not found.
+*WARNING* resDevice - cell 'RNPPO_RF(GENERIC)' not found.
+*WARNING* resDevice - cell 'RNPPO_MM(GENERIC)' not found.
+*WARNING* resDevice - cell 'RNNPO_RF(GENERIC)' not found.
+*WARNING* resDevice - cell 'RNNPO_MM(GENERIC)' not found.
+*WARNING* mosDevice - cell 'P_PO7W500_33_RF(GENERIC)' not found.
+*WARNING* mosDevice - cell 'P_PO7W500_18_RF(GENERIC)' not found.
+*WARNING* mosDevice - cell 'P_L34W500_33_RF(GENERIC)' not found.
+*WARNING* mosDevice - cell 'P_L18W500_18_RF(GENERIC)' not found.
+*WARNING* mosDevice - cell 'N_PO7W500_33_RF(GENERIC)' not found.
+*WARNING* mosDevice - cell 'N_PO7W500_18_RF(GENERIC)' not found.
+*WARNING* mosDevice - cell 'N_L34W500_33_RF(GENERIC)' not found.
+*WARNING* mosDevice - cell 'N_L18W500_18_RF(GENERIC)' not found.

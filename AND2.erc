@@ -1,0 +1,12 @@
+
+***** Begin Label Report *****
+
+ Label in cell 'AND2 layout traffic':
+  info: Assign pin label "VDD1" at (11.100, 8.400) to layer `M1'.
+  info: Assign pin label "a" at (3.000, 5.600) to layer `M1'.
+  info: Assign pin label "b" at (6.200, 5.500) to layer `M1'.
+  info: Assign pin label "out" at (15.000, 5.800) to layer `M1'.
+  info: Floating label discarded:  "GND1" at (9.300, 1.500).
+
+***** End of Label Report *****
+

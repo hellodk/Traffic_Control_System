@@ -1,0 +1,134 @@
+================================================================================
+Rule No. 83 : 4.14A/B/C: Minimum  Poly width is 0.18um.
+
+Real Error Count : 1; Flat Error Count : 1
+================================================================================
+
+--------------------------------------------------------------------------------
+Cell Name : AND2 layout traffic
+
+                   Cell Errors    Real Errors   Cell Placements     Environments
+                             1              1                 1                1
+--------------------------------------------------------------------------------
+Env.  Env. Placements            X1           Y1          X2           Y2
+
+  1        1                  7.128        6.470       7.306        6.512
+
+Shape               Environments Status & Error Marker 
+
+          1           X1         Y1         X2         Y2
+
+   1      X        7.128      6.470      7.306      6.512
+
+================================================================================
+Rule No. 182 : 4.20A: Minimum Metal1 width is 0.24um
+
+Real Error Count : 3; Flat Error Count : 3
+================================================================================
+
+--------------------------------------------------------------------------------
+Cell Name : AND2 layout traffic
+
+                   Cell Errors    Real Errors   Cell Placements     Environments
+                             3              3                 1                1
+--------------------------------------------------------------------------------
+Env.  Env. Placements            X1           Y1          X2           Y2
+
+  1        1                  7.303        4.656       7.766        6.719
+
+Shape               Environments Status & Error Marker 
+
+          1           X1         Y1         X2         Y2
+
+   1      X        7.303      4.656      7.308      4.657
+   2      X        7.527      4.702      7.766      5.509
+   3      X        7.527      5.756      7.766      6.719
+
+================================================================================
+Rule No. 183 : 4.20B.a: Minimum Metal1 to Metal1 spacing (absolute minimum) is 0.24um
+
+Real Error Count : 1; Flat Error Count : 1
+================================================================================
+
+--------------------------------------------------------------------------------
+Cell Name : AND2 layout traffic
+
+                   Cell Errors    Real Errors   Cell Placements     Environments
+                             1              1                 1                1
+--------------------------------------------------------------------------------
+Env.  Env. Placements            X1           Y1          X2           Y2
+
+  1        1                  7.308        4.459       7.527        4.755
+
+Shape               Environments Status & Error Marker 
+
+          1           X1         Y1         X2         Y2
+
+   1      X        7.308      4.459      7.527      4.755
+
+================================================================================
+Rule No. 187 : 4.20E: Minimum Metal1 area is 0.1764 um^2
+
+Real Error Count : 1; Flat Error Count : 1
+================================================================================
+
+--------------------------------------------------------------------------------
+Cell Name : AND2 layout traffic
+
+                   Cell Errors    Real Errors   Cell Placements     Environments
+                             1              1                 1                1
+--------------------------------------------------------------------------------
+Env.  Env. Placements            X1           Y1          X2           Y2
+
+  1        1                  7.303        4.656       7.308        4.657
+
+Shape               Environments Status & Error Marker 
+
+          1           X1         Y1         X2         Y2
+
+   1      X        7.303      4.656      7.308      4.657
+
+================================================================================
+Rule No. 193 : 4.22A: Minimum Metal2 width is 0.28um
+
+Real Error Count : 1; Flat Error Count : 1
+================================================================================
+
+--------------------------------------------------------------------------------
+Cell Name : AND2 layout traffic
+
+                   Cell Errors    Real Errors   Cell Placements     Environments
+                             1              1                 1                1
+--------------------------------------------------------------------------------
+Env.  Env. Placements            X1           Y1          X2           Y2
+
+  1        1                  3.971        8.508       3.972        8.535
+
+Shape               Environments Status & Error Marker 
+
+          1           X1         Y1         X2         Y2
+
+   1      X        3.971      8.508      3.972      8.535
+
+================================================================================
+Rule No. 198 : 4.22E: Minimum Metal2 area is 0.1936 um^2
+
+Real Error Count : 1; Flat Error Count : 1
+================================================================================
+
+--------------------------------------------------------------------------------
+Cell Name : AND2 layout traffic
+
+                   Cell Errors    Real Errors   Cell Placements     Environments
+                             1              1                 1                1
+--------------------------------------------------------------------------------
+Env.  Env. Placements            X1           Y1          X2           Y2
+
+  1        1                  3.971        8.508       3.972        8.535
+
+Shape               Environments Status & Error Marker 
+
+          1           X1         Y1         X2         Y2
+
+   1      X        3.971      8.508      3.972      8.535
+

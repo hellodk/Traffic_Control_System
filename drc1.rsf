@@ -1,0 +1,21 @@
+;----------------------------------------------------------------------------
+; @(#)$CDS: assura version av3.1:Production:dfII5.1.41 09/13/2006 11:58 (tux21ee) $
+;----------------------------------------------------------------------------
+
+
+;----------------------------------------------------------------------------
+; avParameter Section
+; Created by the Assura UI
+;----------------------------------------------------------------------------
+
+avParameters(
+  ?inputLayout ( "df2" "traffic" )
+  ?cellName "AND2"
+  ?viewName "layout"
+  ?runName "drc1"
+  ?workingDirectory "./traffic"
+  ?technology "UMC_18_CMOS"
+  ?techLib "/home/summer_training/cadence/umc_design/assura_tech.lib"
+  ?techRuleSet "DRC"
+  ?avrpt t
+)

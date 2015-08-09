@@ -1,0 +1,15 @@
+
+***** Begin Label Report *****
+
+ Label in cell 'AND2 layout traffic':
+  info: Assign pin label "B" at (6.821, 5.502) to layer `ME1'.
+  info: Assign pin label "VDD1" at (10.927, 8.321) to layer `ME1'.
+  info: Assign pin label "VDD1" at (10.866, 8.387) to layer `ME1'.
+  info: Assign pin label "GND1" at (5.046, 2.966) to layer `ME1'.
+  WARN: Multiple label discarded: "GND1" at (5.046, 2.966) and "VDD1" on net C2.
+  WARN: There is a Warning on net C2: multiple Labels on a single Net,
+        therefore, "out" at (15.080, 5.670) is discarded.
+  info: Assign pin label "a" at (2.980, 5.505) to layer `ME1'.
+
+***** End of Label Report *****
+

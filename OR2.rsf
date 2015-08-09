@@ -1,0 +1,575 @@
+;----------------------------------------------------------------------------
+; @(#)$CDS: assura version av3.1:Production:dfII5.1.41 09/13/2006 11:58 (tux21ee) $
+;----------------------------------------------------------------------------
+
+
+;----------------------------------------------------------------------------
+; avParameter Section
+; Created by the Assura UI
+;----------------------------------------------------------------------------
+
+avParameters(
+  ?inputLayout ( "df2" "traffic" )
+  ?cellName "OR2"
+  ?viewName "layout"
+  ?workingDirectory "/home/summer_training/cadence/traffic"
+  ?technology "UMC_18_CMOS"
+  ?techLib "/home/summer_training/cadence/umc_design/assura_tech.lib"
+  ?techRuleSet "LVS"
+  ?avrpt t
+)
+
+
+
+
+;----------------------------------------------------------------------------
+; avCompareRules Section from Rules Files
+; Specified in the Assura UI
+;----------------------------------------------------------------------------
+
+; Compare diode properties
+
+; DIODE area, pj
+
+  diodeAREA_Tol = 3.0
+  diodePJ_Tol   = 3.0 
+
+  procedure( compareDIO( layPlist, schPlist )
+    prog( (missingLay missingSch)
+
+; Remap schematic AREA -> area and PJ -> pj
+
+      when( schPlist->AREA schPlist->area = schPlist->AREA )
+      when( schPlist->PJ   schPlist->pj   = schPlist->PJ )
+
+; If m is missing, set it to 1
+
+      when( !layPlist->m  layPlist->m = 1 )
+      when( !layPlist->M  layPlist->M = 1 )
+      when( !schPlist->m  schPlist->m = 1 )
+      when( !schPlist->M  schPlist->M = 1 )
+
+; If "area" is missing generate a parameter mismatch
+
+      foreach( prop '( area pj )
+        unless( get( layPlist prop )
+          missingLay = cons( prop missingLay )
+        ) ;unless
+        unless( get( schPlist prop )
+          missingSch = cons( prop missingSch )
+        ) ;unless
+      ) ;foreach
+
+; Report all missing parameters
+
+      when( ( missingLay || missingSch )
+
+        when( missingSch
+          sprintf( msg1 "Sch DIODE missing params: %s"
+            buildString( missingSch ",") )
+        ) ;when
+        when( !missingSch
+          sprintf( msg1 "Sch DIODE area %g pj %g m %g"
+            float(schPlist->area) float(schPlist->pj) float(schPlist->m)
+          )
+        ) ;when
+
+        when( missingLay
+          sprintf( msg2 "Lay DIODE missing params: %s"
+            buildString( missingLay ",") )
+        ) ;when
+        when( !missingLay
+          sprintf( msg2 "Lay DIODE area %g pj %g m %g"
+            float(layPlist->area) float(layPlist->pj) float(layPlist->m)
+          )
+        ) ;when
+
+        sprintf( msg "Err: %s ; %s" msg1 msg2 )
+        return( msg )
+      )
+
+; now we know that area and m are defined for both plists
+; correct for m here
+
+      layM = float(float( layPlist->m ) + float( layPlist->M ) - 1 )
+      layA = float( layM * layPlist->area )
+      layP = float( layM * layPlist->pj )
+
+      schM = float(float( schPlist->m ) + float( schPlist->M ) - 1 )
+      schA = float( schM * schPlist->area )
+      schP = float( schM * schPlist->pj )
+
+      diffA = 100 * ( abs( layA - schA ) / schA )
+      diffP = 100 * ( abs( layP - schP ) / schP )
+
+      areaErr = nil
+      pjErr   = nil
+
+      when( diffA > diodeAREA_Tol areaErr = t )
+      when( diffP > diodePJ_Tol pjErr = t )
+
+; if no errors return nil
+
+      when( !areaErr && !pjErr return(nil) )
+
+; now we know there is a parameter error
+
+      sprintf( msg
+		"Err: DIODE Sch area/pj/m  %g %g %g; Lay area/pj/m %g %g %g"
+                schA schP schM layA layP layM 
+      )
+      return( msg )
+
+   ) ; end prog
+  ) ; end compareDIO
+; *****************************************************************
+; combine parallel diodes
+
+procedure( parallelDIO( dio1 dio2 )
+  prog( ( parDio missing1 missing2 )
+
+; set the output plist to nil
+    parDio = ncons(nil)
+
+
+; Remap AREA -> area and PJ -> pj
+
+      when( dio1->AREA dio1->area = dio1->AREA )
+      when( dio1->PJ  dio1->pj   = dio1->PJ )
+      when( dio2->AREA dio2->area = dio2->AREA )
+      when( dio2->PJ  dio2->pj   = dio2->PJ )
+; If m (m factor) is missing, set it to 1
+
+    when( !dio1->m  dio1->m = 1 )
+    when( !dio1->M  dio1->M = 1 )
+    when( !dio2->m  dio2->m = 1 )
+    when( !dio2->M  dio2->M = 1 )
+
+; If area is missing, do not combine
+
+    foreach( prop '( area pj )
+      unless( get( dio1 prop )
+        missing1 = cons( prop missing1 )
+        ) ;unless
+      unless( get( dio2 prop )
+        missing2 = cons( prop missing2 )
+        ) ;unless
+      ) ;foreach
+
+; Report all missing parameters
+
+    when( ( missing1 || missing2 )
+
+      printf( "\n" )
+      printf( 
+        "** Parallel DIODE with missing parameters not combined:\n" )
+
+      when( missing1
+        printf(
+          "   1st device: Diode missing parameters: %s \n"
+          buildString( missing1 ",") )
+        ) ;when
+      when( !missing1
+        printf(
+          "   1st device: Diode with all parameters \n" )
+        ) ;when
+
+      when( missing2
+        printf(
+          "   2nd device: Diode missing parameters: %s \n"
+          buildString( missing2 ",") )
+        ) ;when
+      when( !missing2
+        printf(
+          "   2nd device: Diode with all parameters \n" )
+        ) ;when
+
+      return( "doNotCombine" )
+      )
+
+; now we know that area and m are defined for both plists
+
+; set variables to make typing easier and code simpler
+
+    area1 = float( dio1->area )
+    area2 = float( dio2->area )
+    pj1   = float( dio1->pj )
+    pj2   = float( dio2->pj )
+    M1    = float(float( dio1->m ) + float( dio1->M ) - 1 ) 
+    M2    = float(float( dio2->m ) + float( dio2->M ) - 1 )
+
+; Now combine parameters; set new m = 1
+
+    newarea = float( area1*M1 + area2*M2 )
+    newpj   = float( pj1*M1 + pj2*M2 )
+
+    parDio->area = newarea
+    parDio->pj   = newpj
+    parDio->m    = float(1)
+
+;    printf( "\n" )
+;    printf( "** Parallel Diode combined: \n" )
+;
+;    printf( "   1st device: area = %g pj = %g m = %g \n" area1 pj1 M1 )
+;    printf( "   2nd device: area = %g pj = %g m = %g \n" area2 pj2 M2 )
+
+;    printf( "   Resulting: area = %g pj = %g m = 1 \n" newarea newpj )
+
+    return( parDio )
+
+    ) ;prog
+  ) ;parallelDIO
+
+
+
+procedure( doNotCompare(arg1 arg2) prog(  ()  return(nil) ) )  
+    
+; *****************************************************************
+; 	         Compare RF MOS properties
+; *****************************************************************
+
+procedure( compareRFMOS( layPlist, schPlist )
+    prog( (missingLay missingSch)
+
+      tolW  = 0.01	; the tolerance of gate width  is 1%
+      tolL  = 0.01	; the tolerance of gate length is 1%
+
+; If w,l,nf,m are missing, set them to W,L,NF,M respectively
+
+      when( !schPlist->l  schPlist->l  = schPlist->L  )
+      when( !schPlist->w  schPlist->w  = schPlist->W  )
+      when( !schPlist->m  schPlist->m  = schPlist->M  )
+      when( !layPlist->l  layPlist->l  = layPlist->L  )
+      when( !layPlist->w  layPlist->w  = layPlist->W  )
+      when( !layPlist->nf layPlist->nf = layPlist->NF )
+
+; If m (nf factor) is missing, set it to 1
+
+      when( !layPlist->nf  layPlist->nf = 1  )
+      when( !schPlist->m   schPlist->m  = 1  )
+
+; If W or L is missing generate a parameter mismatch
+            
+      foreach( prop '( w l )
+        unless( get( layPlist prop )
+          missingLay = cons( prop missingLay )
+        ) ;unless
+        unless( get( schPlist prop )
+          missingSch = cons( prop missingSch )
+        ) ;unless
+      ) ;foreach
+      
+; Report all missing parameters
+
+      when( ( missingLay || missingSch )      
+	when( missingSch 
+	  sprintf( msg1 "Sch MOS missing params: %s" 
+	    buildString( missingSch ",") )
+	) ;when
+	when( !missingSch
+	  sprintf( msg1 "Sch MOS W/L/M %g %g %g" 
+            float(schPlist->w) float(schPlist->l) float(schPlist->m)
+          )
+	) ;when
+	when( missingLay
+	  sprintf( msg2 "Lay MOS missing params: %s" 
+	    buildString( missingLay ",") )
+ 	) ;when
+	when( !missingLay
+	  sprintf( msg2 "Lay MOS W/L/NF %g %g %g" 
+            float(layPlist->w) float(layPlist->l) float(layPlist->nf)
+          )
+	) ;when
+        sprintf( msg "Err: %s ; %s" msg1 msg2 )
+        return( msg )
+      )
+
+; now we know that w, l and m are defined for both plists
+
+      layW = float( layPlist->nf * layPlist->w )
+      layL = float( layPlist->l )
+      schW = float( schPlist->m * schPlist->w )
+      schL = float( schPlist->l )
+   
+      Werr1 = nil
+      Lerr1 = nil     
+      when( ( abs( layW - schW ) / schW ) > tolW Werr1 = t )
+      when( ( abs( layL - schL ) / schL ) > tolL Lerr1 = t )
+      
+      myschW=schW*1e-6
+      myschL=schL*1e-6
+            
+      Werr2 = nil
+      Lerr2 = nil         
+      when( ( abs( layW - myschW ) / myschW ) > tolW Werr2 = t )
+      when( ( abs( layL - myschL ) / myschL ) > tolL Lerr2 = t )
+
+; if no errors return nil
+
+	myFlag1=nil
+	myFlag2=nil
+	when(!Werr1 && !Lerr1 myFlag1=t) 
+	when(!Werr2 && !Lerr2 myFlag2=t) 	
+      when( myFlag1 || myFlag2 return(nil) )    
+
+; now we know there is a parameter error
+      if(schL>10e-3 && schW>10e-3 then
+      sprintf( 
+        msg
+        "Err: MOS Sch L/W %g %g ; Lay L/W %g %g " 
+        myschL myschW  layL layW 
+      )
+      return( msg )
+      else            
+      sprintf( 
+        msg1
+        "Err: MOS Sch L/W %g %g ; Lay L/W %g %g " 
+        schL schW  layL layW 
+      )
+      return( msg1 )
+      );if
+    ) ; end prog
+  ) ; end compareRFMOS
+
+   avCompareRules(
+       
+    	schematic( 
+      	  setPower( all "*VCC*" )
+      	  setPower( all "*VDD*" )
+      	  setGround( all "*GND*" )
+      	  setGround( all "*VSS*" )
+
+          swapPins( "N_L18W500_18_RF" nil )         
+          swapPins( "N_L34W500_33_RF" nil )         
+          swapPins( "N_PO7W500_18_RF" nil )         
+          swapPins( "N_PO7W500_33_RF" nil )         
+          swapPins( "P_L18W500_18_RF" nil )         
+          swapPins( "P_L34W500_33_RF" nil )         
+          swapPins( "P_PO7W500_18_RF" nil )         
+          swapPins( "P_PO7W500_33_RF" nil )         
+          swapPins( "VARMIS_18_RF" nil )         
+          swapPins( "VARDIOP_RF" nil )         
+          swapPins( "MIMCAPS_MM" nil )         
+          swapPins( "MIMCAPM_RF" nil )         
+          swapPins( "PAD_RF" nil )
+          swapPins( "L_SLCR20K_RF" nil )  
+    	)
+ 
+        layout(
+      	  setPower( all "*VCC*" )
+          setPower( all "*VDD*" )
+          setGround( all "*GND*" )
+          setGround( all "*VSS*" )
+
+       	  mosDevice( "N_L18W500_18_RF(GENERIC)" ( "D" "G" "S" "B" ) )
+	  mosDevice( "N_L34W500_33_RF(GENERIC)" ( "D" "G" "S" "B" ) )
+	  mosDevice( "N_PO7W500_18_RF(GENERIC)" ( "D" "G" "S" "B" ) )
+	  mosDevice( "N_PO7W500_33_RF(GENERIC)" ( "D" "G" "S" "B" ) )
+	  mosDevice( "P_L18W500_18_RF(GENERIC)" ( "D" "G" "S" "B" ) )
+	  mosDevice( "P_L34W500_33_RF(GENERIC)" ( "D" "G" "S" "B" ) )
+	  mosDevice( "P_PO7W500_18_RF(GENERIC)" ( "D" "G" "S" "B" ) )
+	  mosDevice( "P_PO7W500_33_RF(GENERIC)" ( "D" "G" "S" "B" ) )
+	  resDevice( "RNNPO_MM(GENERIC)" ( "PLUS" "MINUS" "B" ) )
+	  resDevice( "RNNPO_RF(GENERIC)" ( "PLUS" "MINUS" "B" ) )
+	  resDevice( "RNPPO_MM(GENERIC)" ( "PLUS" "MINUS" "B" ) )
+	  resDevice( "RNPPO_RF(GENERIC)" ( "PLUS" "MINUS" "B" ) )
+	  resDevice( "RNHR1000_MM(GENERIC)" ( "PLUS" "MINUS" "B"  ))
+	  resDevice( "RNHR_RF(GENERIC)" ( "PLUS" "MINUS" "B" ) )
+;;	  resDevice( "RM1_MM(GENERIC)" ( "PLUS" "MINUS" nil ) )
+;;	  resDevice( "RM2_MM(GENERIC)" ( "PLUS" "MINUS" nil ) )
+;;	  resDevice( "RM3_MM(GENERIC)" ( "PLUS" "MINUS" nil ) )
+;;	  resDevice( "RM4_MM(GENERIC)" ( "PLUS" "MINUS" nil ) )
+;;	  resDevice( "RM5_MM(GENERIC)" ( "PLUS" "MINUS" nil ) )
+;;	  resDevice( "RM6_MM(GENERIC)" ( "PLUS" "MINUS" nil ) )
+	  capDevice( "VARMIS_18_RF(GENERIC)" ( "PLUS" "MINUS" "B" ) )
+	  capDevice( "VARDIOP_RF(GENERIC)" ( "PLUS" "MINUS" nil ) )
+	  capDevice( "MIMCAPS_MM(GENERIC)" ( "PLUS" "MINUS" nil ) )
+ 	  capDevice( "MIMCAPM_RF(GENERIC)" ( "PLUS" "MINUS" "B" ) )
+	  capDevice( "PAD_RF(GENERIC)" ( "PLUS" "MINUS" nil ) )
+          indDevice( "L_SLCR20K_RF(GENERIC)" ( "PLUS" "MINUS" "B" ) )
+
+          swapPins( "N_L18W500_18_RF" nil )         
+          swapPins( "N_L34W500_33_RF" nil )         
+          swapPins( "N_PO7W500_18_RF" nil )         
+          swapPins( "N_PO7W500_33_RF" nil )         
+          swapPins( "P_L18W500_18_RF" nil )         
+          swapPins( "P_L34W500_33_RF" nil )         
+          swapPins( "P_PO7W500_18_RF" nil )         
+          swapPins( "P_PO7W500_33_RF" nil )         
+          swapPins( "VARMIS_18_RF" nil )         
+          swapPins( "VARDIOP_RF" nil )         
+          swapPins( "MIMCAPS_MM" nil )         
+          swapPins( "MIMCAPM_RF" nil )         
+          swapPins( "PAD_RF" nil )
+          swapPins( "L_SLCR20K_RF" nil )         
+        )
+
+	mergeParallel( "N_PO7W500_18_RF"  noMerge )
+    	mergeParallel( "N_L18W500_18_RF"  noMerge )
+	mergeParallel( "P_PO7W500_18_RF"  noMerge )
+	mergeParallel( "P_L18W500_18_RF"  noMerge )
+	mergeParallel( "N_PO7W500_33_RF"  noMerge )
+	mergeParallel( "N_L34W500_33_RF"  noMerge )
+	mergeParallel( "P_PO7W500_33_RF"  noMerge )
+	mergeParallel( "P_L34W500_33_RF"  noMerge )
+    
+	;;mergeParallel( "RNNPO_RF"	noMerge )
+	;;mergeParallel( "RNPPO_RF"	noMerge )
+	;;mergeParallel( "RNHR_RF"	noMerge )
+	mergeParallel( "PAD_RF"		noMerge )
+	;;mergeParallel( "MIMCAPM_RF"	noMerge )
+	mergeParallel( "VARMIS_18_RF"	noMerge )
+	mergeParallel( "VARDIOP_RF"	noMerge )
+	mergeParallel( "L_SLCR20k_RF"	noMerge )
+        
+        mergeParallel(DIO merge parallelDIO)
+
+	mergeSeries( "N_PO7W500_18_RF"  noMerge )
+	mergeSeries( "N_L18W500_18_RF"  noMerge )
+	mergeSeries( "P_PO7W500_18_RF"  noMerge )
+	mergeSeries( "P_L18W500_18_RF"  noMerge )
+	mergeSeries( "N_PO7W500_33_RF"  noMerge )
+	mergeSeries( "N_L34W500_33_RF"  noMerge )
+	mergeSeries( "P_PO7W500_33_RF"  noMerge )
+	mergeSeries( "P_L34W500_33_RF"  noMerge )
+    
+	;;mergeSeries( "RNNPO_RF" 	noMerge )
+	;;mergeSeries( "RNPPO_RF"		noMerge )
+	;;mergeSeries( "RNHR_RF"  	noMerge )
+	mergeSeries( "PAD_RF"		noMerge )
+	;;mergeSeries( "MIMCAPM_RF"	noMerge )
+	mergeSeries( "VARMIS_18_RF"	noMerge )
+	mergeSeries( "VARDIOP_RF"	noMerge )
+	mergeSeries( "L_SLCR20k_RF"	noMerge )
+
+    if( (avSwitch "ARTISAN_LIB") then
+        compareParameter( "N_18_G2" percent( "w" 7 "l" 7 ) )
+        compareParameter( "P_18_G2" percent( "w" 7 "l" 7 ) )
+        compareParameter( "N_33_G2" percent( "w" 3 "l" 3 ) )
+        compareParameter( "P_33_G2" percent( "w" 3 "l" 3 ) )
+        compareParameter( "N_PG400_G2" percent( "w" 3 "l" 3 ) )
+        compareParameter( "N_PD400_G2" percent( "w" 3 "l" 3 ) )
+        compareParameter( "P_L400_G2" percent( "w" 3 "l" 3 ) )
+        compareParameter( "N_PG1020_G2" percent( "w" 3 "l" 3 ) )
+        compareParameter( "N_PD1020_G2" percent( "w" 3 "l" 3 ) )
+        compareParameter( "P_L1020_G2" percent( "w" 3 "l" 3 ) )
+    else
+    if( (avSwitch "FARADAY_LIB") then
+        compareParameter( "N_18_G2" percent( "w" 3 "l" 3 ) )
+        compareParameter( "P_18_G2" percent( "w" 3 "l" 3 ) )
+        compareParameter( "N_33_G2" percent( "w" 3 "l" 3 ) )
+        compareParameter( "P_33_G2" percent( "w" 3 "l" 3 ) )
+        compareParameter( "N_PG400_G2" percent( "w" 20 "l" 20 ) )
+        compareParameter( "N_PD400_G2" percent( "w" 20 "l" 20 ) )
+        compareParameter( "P_L400_G2" percent( "w" 20 "l" 20 ) )
+        compareParameter( "N_PG1020_G2" percent( "w" 3 "l" 3 ) )
+        compareParameter( "N_PD1020_G2" percent( "w" 3 "l" 3 ) )
+        compareParameter( "P_L1020_G2" percent( "w" 3 "l" 3 ) )
+    else
+
+       compareParameter( MOS percent( "w" 3 "l" 3 ) )
+     )
+     )
+
+	compareParameter( "N_L18W500_18_RF" compareRFMOS )
+	compareParameter( "N_PO7W500_18_RF" compareRFMOS )
+	compareParameter( "P_PO7W500_18_RF" compareRFMOS )
+	compareParameter( "P_L18W500_18_RF" compareRFMOS )
+	compareParameter( "N_PO7W500_33_RF" compareRFMOS )
+	compareParameter( "N_L34W500_33_RF" compareRFMOS )
+	compareParameter( "P_PO7W500_33_RF" compareRFMOS )
+	compareParameter( "P_L34W500_33_RF" compareRFMOS )
+
+    if( (avSwitch "FARADAY_LIB") then
+        compareParameter( "RSNWELL" percent( "r" 9 ) )
+        compareParameter( "RSNPO" percent( "r" 3 ) )
+        compareParameter( "RSPPO" percent( "r" 3 ) )
+        compareParameter( "RSND" percent( "r" 3 ) )
+        compareParameter( "RSPD" percent( "r" 3 ) )
+        compareParameter( "RNNPO" percent( "r" 3 ) )
+        compareParameter( "RNPPO" percent( "r" 60 ) )
+        compareParameter( "RNND" percent( "r" 3 ) )
+        compareParameter( "RNPD" percent( "r" 3 ) )
+    else
+    if( (avSwitch "LIB") then
+        compareParameter( "RNPD" percent( "r" 15 ) )
+    else
+    if( (avSwitch "ARTISAN_LIB") then
+        compareParameter( "RSNWELL" percent( "r" 9 ) )
+        compareParameter( "RSNPO" percent( "r" 3 ) )
+        compareParameter( "RSPPO" percent( "r" 3 ) )
+        compareParameter( "RSND" percent( "r" 3 ) )
+        compareParameter( "RSPD" percent( "r" 3 ) )
+        compareParameter( "RNND" percent( "r" 3 ) )
+        compareParameter( "RNPD" percent( "r" 3 ) )
+        compareParameter( "RNNPO" percent( "r" 29 ) )
+        compareParameter( "RNPPO" percent( "r" 9 ) )
+    else
+	compareParameter( RES percent( "r" 10 ) )
+    )
+    )
+    )
+
+
+	compareParameter( BJT percent( "area" 1 ) )
+	compareParameter( CAP percent( "c" 1 ) )
+        compareParameter( "MIMCAPS_MM" percent( "c" 3 ) )	
+
+    if( (avSwitch "VST_LIB") then
+    compareParameter( "DION_G2" percent( "area" 3 "pj" 25 ) )
+    compareParameter( "DIOP_G2" percent( "area" 3 "pj" 200 ) )
+    compareParameter( "DIONW_G2" percent( "area" 3 "pj" 3 ) )
+    else
+	;;compareParameter( DIO percent( "area" 12 ) )
+ 	;;compareParameter( "DION_MM" percent( "area" 1 ) )
+	;;compareParameter( "DIOP_MM" percent( "area" 1 ) )    
+	;;compareParameter( "DIONW_MM" percent( "area" 1 ) )    
+        compareParameter( DIO compareDIO )
+      )
+
+        compareParameter( "VARMIS_18_RF" percent( "nf" 3 ) )
+        compareParameter( "VARDIOP_18_RF" percent( "nf" 3 ) )
+	compareParameter( "PAD_RF" percent( "index" 3 ) )
+	;;compareParameter( "PAD_RF" doNotCompare )
+	compareParameter( "L_SLCR20K_RF"  percent( "W" 3 "D" 3 "N" 3 ) )
+	;;compareParameter( "L_SLCR20K_RF" doNotCompare )
+
+	autoPinSwap( t 2000 ) 
+	expandOnError( ( reduce t ) ( swap t ) )
+    
+	filter( "X" )
+if( (avSwitch "FARADAY_LIB") then
+mergeSplitGate( mergeAll )
+)
+   
+    ;	nameBinding( ( pin nil ) )
+    if( (avSwitch "LIB") then
+    verifyTopSchPins(nil)
+    verifyTopLayPins(nil)
+    nameBinding( ( pin nil ) )  ; the option need to be on for Virage SRAM 
+    else  
+	verifyTopSchPins(t)
+	verifyTopLayPins(t)	 
+     )
+    ; To report filterd devices or to list devices statistics when LVS is clean.
+   filterReduceStatistics() 
+   listFilteredDevices() 
+  
+  ) ; avCompareRules complete
+
+
+
+;----------------------------------------------------------------------------
+; avCompareRules Section from Run Submit Form
+; Created by the Assura UI
+;----------------------------------------------------------------------------
+
+avCompareRules(
+schematic(
+netlist( dfII "/home/summer_training/cadence/traffic/OR2.vlr" )
+)
+)
+
+
+avLVS()
+
